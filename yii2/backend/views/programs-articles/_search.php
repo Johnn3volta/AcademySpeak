@@ -24,6 +24,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'text') ?>
 
+    <?= $form->field($model, 'seo_h1') ?>
+
     <?= $form->field($model, 'title') ?>
 
     <?= $form->field($model, 'description') ?>

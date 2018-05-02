@@ -13,11 +13,11 @@ class MyAppAsset extends AssetBundle{
     public $baseUrl = '@web';
     public $css = [
         'css/styles-merged.css',
-        'css/style.min.css',
+        'css/style.css',
         'css/custom.css',
     ];
     public $js = [
-        'js/scripts.min.js',
+        'js/scripts.js',
         'js/main.min.js',
 //        'js/custom.js'
     ];

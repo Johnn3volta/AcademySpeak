@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\ProgramsArticles */
 /* @var $form yii\widgets\ActiveForm */
+/* @var $parents array  */
 ?>
 
 <div class="programs-articles-form">
@@ -13,6 +14,8 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'seo_h1')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'text')->textarea(['rows' => 6]) ?>
 
@@ -24,11 +27,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'parent_id')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
+    <?= $form->field($model, 'parent_id')->dropDownList($parents,['prompt' => '-- Выберите родительскую категорию --']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

@@ -19,7 +19,7 @@ class ProgramsArticlesSearch extends ProgramsArticles
     {
         return [
             [['id', 'parent_id', 'created_at', 'updated_at'], 'integer'],
-            [['name', 'text', 'title', 'description', 'keywords', 'url'], 'safe'],
+            [['name', 'text', 'title', 'description', 'keywords', 'url','seo_h1'], 'safe'],
         ];
     }
 
@@ -67,6 +67,7 @@ class ProgramsArticlesSearch extends ProgramsArticles
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'text', $this->text])
+            ->andFilterWhere(['like', 'seo_h1', $this->seo_h1])
             ->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'keywords', $this->keywords])

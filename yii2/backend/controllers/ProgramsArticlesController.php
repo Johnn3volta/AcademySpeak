@@ -2,26 +2,37 @@
 
 namespace backend\controllers;
 
+use common\models\ProgramsCats;
 use Yii;
 use common\models\ProgramsArticles;
 use common\models\search\ProgramsArticlesSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ProgramsArticlesController implements the CRUD actions for ProgramsArticles model.
+ * ProgramsArticlesController implements the CRUD actions for ProgramsArticles
+ * model.
  */
-class ProgramsArticlesController extends Controller
-{
+class ProgramsArticlesController extends Controller{
+
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors(){
         return [
+            'access' => [
+                'class' => AccessControl::class,
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class'   => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -31,27 +42,28 @@ class ProgramsArticlesController extends Controller
 
     /**
      * Lists all ProgramsArticles models.
+     *
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex(){
         $searchModel = new ProgramsArticlesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
+            'searchModel'  => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
      * Displays a single ProgramsArticles model.
+     *
      * @param integer $id
+     *
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
-    {
+    public function actionView($id){
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -59,34 +71,40 @@ class ProgramsArticlesController extends Controller
 
     /**
      * Creates a new ProgramsArticles model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * If creation is successful, the browser will be redirected to the 'view'
+     * page.
+     *
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate(){
         $model = new ProgramsArticles();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $parents_cats = ProgramsCats::find()->select('name')->indexBy('id')->column();
+
+        if($model->load(Yii::$app->request->post()) && $model->save()){
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'parents' => $parents_cats
         ]);
     }
 
     /**
      * Updates an existing ProgramsArticles model.
-     * If update is successful, the browser will be redirected to the 'view' page.
+     * If update is successful, the browser will be redirected to the 'view'
+     * page.
+     *
      * @param integer $id
+     *
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
-    {
+    public function actionUpdate($id){
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if($model->load(Yii::$app->request->post()) && $model->save()){
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -97,13 +115,15 @@ class ProgramsArticlesController extends Controller
 
     /**
      * Deletes an existing ProgramsArticles model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * If deletion is successful, the browser will be redirected to the 'index'
+     * page.
+     *
      * @param integer $id
+     *
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
-    {
+    public function actionDelete($id){
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -112,13 +132,14 @@ class ProgramsArticlesController extends Controller
     /**
      * Finds the ProgramsArticles model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
+     *
      * @param integer $id
+     *
      * @return ProgramsArticles the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
-        if (($model = ProgramsArticles::findOne($id)) !== null) {
+    protected function findModel($id){
+        if(($model = ProgramsArticles::findOne($id)) !== null){
             return $model;
         }
 

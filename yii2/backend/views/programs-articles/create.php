@@ -5,6 +5,8 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\ProgramsArticles */
+/* @var $parents array */
+
 
 $this->title = 'Create Programs Articles';
 $this->params['breadcrumbs'][] = ['label' => 'Programs Articles', 'url' => ['index']];
@@ -16,6 +18,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'parents' => $parents
+
     ]) ?>
 
 </div>
