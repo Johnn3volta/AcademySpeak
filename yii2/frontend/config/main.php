@@ -39,8 +39,15 @@ return [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
+            'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
+                '/' => 'site/index',
+                '<action:(about|contact|captcha)>' => 'site/<action>',
+//                '<url:[\w-]+>' => 'category/view',
+//                '<parent_url:[\w-]+>/<url:[\w-]+>/print-out' => 'product/print-out',
+//                '<parent_url:[\w-]+>/<url:[\w-]+>/print-out-blank' => 'product/print-out-blank',
+//                '<parent_url:[\w-]+>/<url:[\w-]+>' => 'product/view'
             ],
         ],
     ],

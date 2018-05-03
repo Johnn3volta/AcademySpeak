@@ -41,8 +41,19 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '<action:(login)>' => 'site/<action>',
             ],
         ],
+    ],
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\PathController',
+            'access' => ['@'],
+            'root' => [
+                'path' => '../uploads',
+                'name' => 'imageUploads'
+            ],
+        ]
     ],
     'params' => $params,
 ];

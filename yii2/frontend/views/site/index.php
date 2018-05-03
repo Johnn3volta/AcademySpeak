@@ -5,35 +5,35 @@
 ?>
 <section class="flexslider">
   <ul class="slides">
-    <li style="background-image: url(<?= Yii::$app->request->baseUrl . '/uploads/images'?>/slider_1.jpg)" class="overlay">
+    <li style="background-image: url(<?= Yii::getAlias('@myImages')?>/slides/slide_1.jpg)" class="overlay">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
             <div class="probootstrap-slider-text text-center">
-              <h1 class="probootstrap-heading probootstrap-animate"><?= Yii::getAlias('@web/'.'@uploads') ?></h1>
+              <h2 class="probootstrap-heading probootstrap-animate"><?= Yii::getAlias('@myImages') ?></h2>
             </div>
           </div>
         </div>
       </div>
     </li>
-    <li style="background-image: url(<?= Yii::$app->request->baseUrl . '/uploads/images'?>/slider_2.jpg)" class="overlay">
+    <li style="background-image: url(<?= Yii::getAlias('@myImages')?>/slides/slide_2.jpg)" class="overlay">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
             <div class="probootstrap-slider-text text-center">
-              <h1 class="probootstrap-heading probootstrap-animate">Education is Life</h1>
+              <h2 class="probootstrap-heading probootstrap-animate">Education is Life</h2>
             </div>
           </div>
         </div>
       </div>
 
     </li>
-    <li style="background-image: url(<?= Yii::$app->request->baseUrl . '/uploads/images'?>/slider_3.jpg)" class="overlay">
+    <li style="background-image: url(<?= Yii::getAlias('@myImages')?>/slides/slide_3.jpg)" class="overlay">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
             <div class="probootstrap-slider-text text-center">
-              <h1 class="probootstrap-heading probootstrap-animate">Helping Each of Our Students Fulfill the Potential</h1>
+              <h2 class="probootstrap-heading probootstrap-animate">Helping Each of Our Students Fulfill the Potential</h2>
             </div>
           </div>
         </div>

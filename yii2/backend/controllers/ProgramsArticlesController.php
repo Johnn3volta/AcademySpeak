@@ -31,7 +31,7 @@ class ProgramsArticlesController extends Controller{
                     ],
                 ],
             ],
-            'verbs' => [
+            'verbs'  => [
                 'class'   => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
@@ -79,15 +79,15 @@ class ProgramsArticlesController extends Controller{
     public function actionCreate(){
         $model = new ProgramsArticles();
 
-        $parents_cats = ProgramsCats::find()->select('name')->indexBy('id')->column();
+        $parents = $model->parentsCats();
 
         if($model->load(Yii::$app->request->post()) && $model->save()){
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
-            'model' => $model,
-            'parents' => $parents_cats
+            'model'   => $model,
+            'parents' => $parents,
         ]);
     }
 
@@ -104,12 +104,15 @@ class ProgramsArticlesController extends Controller{
     public function actionUpdate($id){
         $model = $this->findModel($id);
 
+        $parents = $model->parentsCats();
+
         if($model->load(Yii::$app->request->post()) && $model->save()){
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
-            'model' => $model,
+            'model'   => $model,
+            'parents' => $parents,
         ]);
     }
 

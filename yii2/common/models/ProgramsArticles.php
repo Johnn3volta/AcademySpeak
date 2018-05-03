@@ -99,4 +99,8 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
     public static function find(){
         return new \common\models\activequery\ProgramsArticlesQuery(get_called_class());
     }
+
+    public function parentsCats(){
+        return $parentsCategories = ProgramsCats::find()->select('name')->indexBy('id')->column();
+    }
 }
