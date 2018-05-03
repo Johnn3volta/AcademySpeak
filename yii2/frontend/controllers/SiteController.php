@@ -18,6 +18,11 @@ use frontend\models\ContactForm;
  */
 class SiteController extends Controller{
 
+    public $description = '';
+    public $keywords = '';
+    public $title = '';
+    public $website = 'website';
+
     /**
      * {@inheritdoc}
      */
@@ -69,7 +74,16 @@ class SiteController extends Controller{
      * @return mixed
      */
     public function actionIndex(){
-        $this->layout = 'myLayout';
+        $this->description = 'hello friend my friend';
+        $this->title = 'то главная страница мать твою )';
+        $this->keywords = '';
+        $this->getView()->title = $this->title;
+        $this->getView()->registerLinkTag(['rel' => 'canonical','href' => 'http://'.Yii::$app->request->serverName]);
+        $this->getView()->registerMetaTag(['name' => 'description','content' => $this->description],'description');
+        $this->getView()->registerMetaTag(['name' => 'keywords','content' => $this->keywords != '' ? $this->keywords : ''],'keywords');
+        $this->getView()->registerMetaTag(['property' => 'og:url','content' => 'http://'.Yii::$app->request->serverName]);
+        $this->getView()->registerMetaTag(['property' => 'og:title','content' => $this->title]);
+        $this->getView()->registerMetaTag(['property' => 'og:type','content' => $this->website]);
         return $this->render('index');
     }
 
@@ -112,6 +126,16 @@ class SiteController extends Controller{
      * @return mixed
      */
     public function actionContact(){
+        $this->description = 'Контактная информация и форма обратной связи';
+        $this->title = 'Обратная связь | '. Yii::$app->name;
+        $this->keywords = '';
+        $this->getView()->title = $this->title;
+        $this->getView()->registerLinkTag(['rel' => 'canonical','href' => 'http://'.Yii::$app->request->serverName.Yii::$app->request->url]);
+        $this->getView()->registerMetaTag(['name' => 'description','content' => $this->description],'description');
+        $this->getView()->registerMetaTag(['name' => 'keywords','content' => $this->keywords != '' ? $this->keywords : ''],'keywords');
+        $this->getView()->registerMetaTag(['property' => 'og:url','content' => 'http://'.Yii::$app->request->serverName.Yii::$app->request->url]);
+        $this->getView()->registerMetaTag(['property' => 'og:title','content' => $this->title]);
+        $this->getView()->registerMetaTag(['property' => 'og:type','content' => $this->website]);
         $model = new ContactForm();
         if($model->load(Yii::$app->request->post()) && $model->validate()){
             if($model->sendEmail(Yii::$app->params['adminEmail'])){

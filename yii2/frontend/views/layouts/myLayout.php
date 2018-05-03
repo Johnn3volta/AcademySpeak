@@ -1,6 +1,7 @@
 <?php
 /* @var $this \yii\web\View */
 /* @var $content string */
+/* @var $description string */
 
 use common\widgets\Alert;
 use frontend\assets\AppAssetIe9;
@@ -12,17 +13,15 @@ AppAssetIe9::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?= Yii::$app->language ?>" prefix="og: http://ogp.me/ns#">
 <head>
   <meta charset="<?= Yii::$app->charset ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?= Html::csrfMetaTags() ?>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
+  <?php $this->head() ?>
   <title><?= Html::encode($this->title) ?></title>
-  <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans"
-      rel="stylesheet">
-    <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -42,7 +41,7 @@ AppAssetIe9::register($this);
                 <div class="col-lg-9 col-md-9 col-sm-9 probootstrap-top-quick-contact-info">
                     <span><i class="icon-location2"></i>Brooklyn, NY 10036, United States</span>
                     <span><i class="icon-phone2"></i>+1-123-456-7890</span>
-                    <span><i class="icon-mail"></i>info@probootstrap.com</span>
+                    <span><i class="icon-mail"></i>pochta@gg.mail</span>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 probootstrap-top-social">
                     <ul>
