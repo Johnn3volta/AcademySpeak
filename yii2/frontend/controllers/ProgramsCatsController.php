@@ -9,6 +9,22 @@
 namespace frontend\controllers;
 
 
-class ProgramsCatsController{
+use common\models\ProgramsCats;
+use yii\web\Controller;
 
+class ProgramsCatsController extends Controller{
+
+    public $title = '';
+
+    public $description = '';
+
+    public $keywords = '';
+
+    public $website = 'website';
+
+    public function actionIndex(){
+        $model = ProgramsCats::find()->asArray()->all();
+
+        return $this->render('programms', ['model' => $model]);
+    }
 }

@@ -29,6 +29,13 @@ class ProgramsCats extends \yii\db\ActiveRecord{
             [
                 'class' => TimestampBehavior::class,
             ],
+            'slug' => [
+                'class' => 'common\behaviors\Slug',
+                'in_attribute' => 'name',
+                'out_attribute' => 'url',
+                'translit' => true,
+
+            ]
         ];
     }
 
@@ -44,7 +51,8 @@ class ProgramsCats extends \yii\db\ActiveRecord{
      */
     public function rules(){
         return [
-            [['name', 'text', 'title', 'description', 'url'], 'required'],
+            [['name', 'text', 'title', 'description', ], 'required'],
+            [['url'],'unique'],
             [['text'], 'string'],
             [['created_at', 'updated_at'], 'integer'],
             [

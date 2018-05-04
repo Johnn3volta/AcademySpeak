@@ -44,6 +44,7 @@ return [
             'rules' => [
                 '/' => 'site/index',
                 '<action:(about|contact|captcha)>' => 'site/<action>',
+                '/programs-cats' => 'programs-cats/index',
 //                '<url:[\w-]+>' => 'category/view',
 //                '<parent_url:[\w-]+>/<url:[\w-]+>/print-out' => 'product/print-out',
 //                '<parent_url:[\w-]+>/<url:[\w-]+>/print-out-blank' => 'product/print-out-blank',

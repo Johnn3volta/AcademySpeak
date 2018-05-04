@@ -1,12 +1,13 @@
 <?php
-
+/* @var $this yii\web\View */
+/* @var $model common\models\ProgramsCats */
 ?>
 
 <section class="probootstrap-section probootstrap-section-colored">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate">
-                <h1>Our Courses</h1>
+                <h1>Развивающие программы</h1>
             </div>
         </div>
     </div>

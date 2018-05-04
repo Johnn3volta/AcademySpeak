@@ -76,16 +76,16 @@ AppAssetIe9::register($this);
                       ['label' => 'Главная','url' => Yii::$app->homeUrl,'options' =>['class' => 'active']],
                       [
                           'label'    => 'Программы',
-                          'url'      => '#',
+                          'url'      => ['/programs-cats'],
                           'options'  => ['class' => 'dropdown'],
-                          'template' => '<a href="#" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
+                          'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
                           'items' => [
-                              ['label' => 'Для детей', 'url' => '#'],
+                              ['label' => 'Для детей', 'url' => ['/programs-cats']],
                               ['label' => 'Для взрослых','url' => '#'],
                               'options' => ['class' => 'dropdown-menu']
                           ]
                       ],
-                      ['label' => 'Диагностика','url' => '/site/about'],
+                      ['label' => 'Диагностика','url' => '#'],
                       ['label' => 'Услуги и цены','url' => '#'],
                       [
                           'label'    => 'О нас',

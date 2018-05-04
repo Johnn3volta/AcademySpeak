@@ -29,6 +29,12 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
             [
                 'class' => TimestampBehavior::class,
             ],
+            'slug' => [
+                'class' => 'common\behaviors\Slug',
+                'in_attribute' => 'name',
+                'out_attribute' => 'url',
+                'translit' => true
+            ]
         ];
     }
 
@@ -45,9 +51,10 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
     public function rules(){
         return [
             [
-                ['name', 'text', 'title', 'description', 'url', 'parent_id'],
+                ['name', 'text', 'title', 'description', 'parent_id'],
                 'required',
             ],
+            [['url'],'unique'],
             [['text'], 'string'],
             [['parent_id', 'created_at', 'updated_at'], 'integer'],
             [
