@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\ProgramsCats */
 
-$this->title = 'Update Programs Cats: {nameAttribute}';
-$this->params['breadcrumbs'][] = ['label' => 'Programs Cats', 'url' => ['index']];
+$this->title = 'Обновить категорию программ';
+$this->params['breadcrumbs'][] = ['label' => 'Категория программ', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="programs-cats-update">
 

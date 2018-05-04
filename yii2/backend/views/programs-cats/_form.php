@@ -15,18 +15,27 @@ mihaildev\elfinder\Assets::noConflict($this);
 <div class="programs-cats-form">
 
     <?php $form = ActiveForm::begin(); ?>
+  <div class="row">
+    <div class="col-md-5">
+        <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-md-7">
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'seo_h1')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'seo_h1')->textInput(['maxlength' => true]) ?>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+        <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-md-7">
+        <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    </div>
+  </div>
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'text')->widget(CKEditor::class, [
         'editorOptions' => ElFinder::ckeditorOptions('elfinder', [

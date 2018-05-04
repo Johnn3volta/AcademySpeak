@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel common\models\search\ProgramsArticlesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Programs Articles';
+$this->title = 'Программы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="programs-articles-index">
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Programs Articles', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать програаму', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

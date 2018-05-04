@@ -9,6 +9,7 @@ $params = array_merge(
 return [
     'id' => 'backend',
     'basePath' => dirname(__DIR__),
+    'name' => 'AdminPanel',
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],

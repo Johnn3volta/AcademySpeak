@@ -8,8 +8,8 @@ use yii\helpers\Html;
 /* @var $parents array */
 
 
-$this->title = 'Create Programs Articles';
-$this->params['breadcrumbs'][] = ['label' => 'Programs Articles', 'url' => ['index']];
+$this->title = 'Создать программу';
+$this->params['breadcrumbs'][] = ['label' => 'Пррограммы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="programs-articles-create">

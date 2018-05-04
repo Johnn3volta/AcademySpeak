@@ -6,10 +6,10 @@ use yii\helpers\Html;
 /* @var $model common\models\ProgramsArticles */
 /* @var $parents array */
 
-$this->title = 'Update Programs Articles: {nameAttribute}';
-$this->params['breadcrumbs'][] = ['label' => 'Programs Articles', 'url' => ['index']];
+$this->title = 'Страница обновления';
+$this->params['breadcrumbs'][] = ['label' => 'Программы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="programs-articles-update">
 

@@ -68,7 +68,7 @@ class ProgramsCats extends \yii\db\ActiveRecord{
             'description' => 'Опсиание страницы(Description)',
             'keywords'    => 'Ключевые слова(Keywords)',
             'url'         => 'ЧПУ',
-            'created_at'  => 'Созвад',
+            'created_at'  => 'Создан',
             'updated_at'  => 'Обновлен',
         ];
     }
