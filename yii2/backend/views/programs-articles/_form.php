@@ -41,7 +41,6 @@ mihaildev\elfinder\Assets::noConflict($this);
 
     <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
-
     <?= $form->field($model, 'text')->widget(CKEditor::class, [
         'editorOptions' => ElFinder::ckeditorOptions('elfinder', [
             'preset' => 'standard',

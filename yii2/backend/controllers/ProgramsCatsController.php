@@ -9,6 +9,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ProgramsCatsController implements the CRUD actions for ProgramsCats model.
@@ -60,11 +61,11 @@ class ProgramsCatsController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+    public function actionView($id){
+        $model = $this->findModel($id);
+        $image = $model->getImage();
+
+        return $this->render('view', compact('model','image'));
     }
 
     /**
@@ -75,14 +76,14 @@ class ProgramsCatsController extends Controller
     public function actionCreate()
     {
         $model = new ProgramsCats();
+        $image = $model->getImage();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success','Категория успешно создана');
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        return $this->render('create', compact('model','image'));
     }
 
     /**
@@ -95,13 +96,20 @@ class ProgramsCatsController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $image = $model->getImage();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->image = UploadedFile::getInstance($model,'image');
+            if(($model->image && $model->image->error == 0)){
+                $model->upload();
+            }
+            Yii::$app->session->setFlash('success','Категория успешно обновлена !');
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
             'model' => $model,
+            'image' =>$image
         ]);
     }
 
@@ -112,9 +120,11 @@ class ProgramsCatsController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
-    {
+    public function actionDelete($id){
+
+        $this->findModel($id)->removeImages();
         $this->findModel($id)->delete();
+
 
         return $this->redirect(['index']);
     }
@@ -132,6 +142,6 @@ class ProgramsCatsController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException('Запрашиваемая страница не найдена');
     }
 }

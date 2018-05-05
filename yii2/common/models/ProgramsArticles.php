@@ -60,7 +60,7 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
             [
                 ['name', 'title', 'description', 'keywords', 'url', 'seo_h1'],
                 'string',
-                'max' => 150,
+                'max' => 255,
             ],
             [
                 ['parent_id'],

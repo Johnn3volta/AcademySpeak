@@ -1,30 +1,27 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ContentManager5
- * Date: 04.05.2018
- * Time: 15:57
- */
+
 
 namespace frontend\controllers;
 
 
 use common\models\ProgramsCats;
-use yii\web\Controller;
 
-class ProgramsCatsController extends Controller{
-
-    public $title = '';
-
-    public $description = '';
-
-    public $keywords = '';
-
-    public $website = 'website';
+class ProgramsCatsController extends MetaController{
 
     public function actionIndex(){
-        $model = ProgramsCats::find()->asArray()->all();
+        $description = 'Суда надо будет чтото написать';
+        $model = ProgramsCats::find()->all();
+        $this->setMeta('Развивающие программы', $description);
 
         return $this->render('programms', ['model' => $model]);
+
     }
+
+    public function actionProgram($url){
+        $program = ProgramsCats::findOne(['url' => $url]);
+
+        $this->setMeta($program->title, $program->description);
+
+        return $this->render('programa',['programm' => $program]);
+   }
 }

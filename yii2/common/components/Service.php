@@ -1,6 +1,16 @@
 <?php
 
+namespace common\components;
 
-class Service{
+
+use yii\base\Component;
+
+class Service extends Component{
+
+
+
+    public function sayHello(){
+        return 'Hello';
+    }
 
 }

@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Категория програм�
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="programs-cats-view">
-
+    <?php $image = $image->getPath('150x150') ?>
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
@@ -34,6 +34,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'description',
             'keywords',
             'url:url',
+            [
+                'attribute' => 'image',
+                'value' => "<img src='../$image' >",
+                'format' => 'html'
+            ],
             'created_at:datetime',
             'updated_at:datetime',
         ],

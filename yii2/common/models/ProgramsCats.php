@@ -24,18 +24,22 @@ use yii\behaviors\TimestampBehavior;
  */
 class ProgramsCats extends \yii\db\ActiveRecord{
 
+    public $image;
+
     public function behaviors(){
         return [
             [
                 'class' => TimestampBehavior::class,
             ],
-            'slug' => [
-                'class' => 'common\behaviors\Slug',
-                'in_attribute' => 'name',
+            'slug'  => [
+                'class'         => 'common\behaviors\Slug',
+                'in_attribute'  => 'seo_h1',
                 'out_attribute' => 'url',
-                'translit' => true,
-
-            ]
+                'translit'      => true,
+            ],
+            'image' => [
+                'class' => 'rico\yii2images\behaviors\ImageBehave',
+            ],
         ];
     }
 
@@ -51,15 +55,16 @@ class ProgramsCats extends \yii\db\ActiveRecord{
      */
     public function rules(){
         return [
-            [['name', 'text', 'title', 'description', ], 'required'],
-            [['url'],'unique'],
+            [['name', 'text', 'title', 'description','seo_h1'], 'required'],
+            [['url'], 'unique'],
             [['text'], 'string'],
             [['created_at', 'updated_at'], 'integer'],
             [
-                ['name', 'title', 'description', 'keywords', 'url', 'seo_h1'],
+                ['name', 'title', 'description', 'keywords', 'url', 'seo_h1',],
                 'string',
-                'max' => 150,
+                'max' => 255,
             ],
+            [['image'], 'file', 'extensions' => 'png, jpg'],
         ];
     }
 
@@ -76,6 +81,7 @@ class ProgramsCats extends \yii\db\ActiveRecord{
             'description' => 'Опсиание страницы(Description)',
             'keywords'    => 'Ключевые слова(Keywords)',
             'url'         => 'ЧПУ',
+            'image'       => 'Картинка',
             'created_at'  => 'Создан',
             'updated_at'  => 'Обновлен',
         ];
@@ -94,5 +100,18 @@ class ProgramsCats extends \yii\db\ActiveRecord{
      */
     public static function find(){
         return new ProgramsCatsQuery(get_called_class());
+    }
+
+    //вынести в компонент
+    public function upload(){
+        if($this->validate()){
+            $path = Yii::getAlias('@myStore'). $this->image->baseName . '.' . $this->image->extension;
+            $this->image->saveAs($path);
+            $this->attachImage($path,true);
+            @unlink($path);
+            return true;
+        }else{
+            return false;
+        }
     }
 }

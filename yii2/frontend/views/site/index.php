@@ -63,7 +63,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo veniam labore ratione illo vero voluptate a deserunt incidunt odio aliquam commodi blanditiis voluptas error non rerum temporibus optio accusantium!</p>
             <p><a href="#" class="btn btn-primary">Learn More</a></p>
           </div>
-          <div class="probootstrap-image probootstrap-animate" style="background-image: url(<?= Yii::$app->request->baseUrl . '/uploads/images'?>/slider_3.jpg)">
+          <div class="probootstrap-image probootstrap-animate" style="background-image: url(<?= Yii::getAlias('@myImages')?>/slider_3.jpg)">
             <a href="https://vimeo.com/45830194" class="btn-video popup-vimeo"><i class="icon-play3"></i></a>
           </div>
         </div>
@@ -134,7 +134,7 @@
   </div>
 </section>
 
-<section class="probootstrap-section probootstrap-section-colored probootstrap-bg probootstrap-custom-heading probootstrap-tab-section" style="background-image: url(<?= Yii::$app->request->baseUrl . '/uploads/images'?>/slider_2.jpg)">
+<section class="probootstrap-section probootstrap-section-colored probootstrap-bg probootstrap-custom-heading probootstrap-tab-section" style="background-image: url(<?= Yii::getAlias('@myImages')?>/slider_2.jpg)">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center section-heading probootstrap-animate">
@@ -163,7 +163,7 @@
                 <div class="owl-carousel" id="owl1">
                   <div class="item">
                     <a href="#" class="probootstrap-featured-news-box">
-                      <figure class="probootstrap-media"><img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                      <figure class="probootstrap-media"><img src="<?= Yii::getAlias('@myImages')?>/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                       <div class="probootstrap-text">
                         <h3>Tempora consectetur unde nisi</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, ut.</p>
@@ -175,7 +175,7 @@
                   <!-- END item -->
                   <div class="item">
                     <a href="#" class="probootstrap-featured-news-box">
-                      <figure class="probootstrap-media"><img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                      <figure class="probootstrap-media"><img src="<?= Yii::getAlias('@myImages')?>/img_sm_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                       <div class="probootstrap-text">
                         <h3>Tempora consectetur unde nisi</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, officia.</p>
@@ -187,7 +187,7 @@
                   <!-- END item -->
                   <div class="item">
                     <a href="#" class="probootstrap-featured-news-box">
-                      <figure class="probootstrap-media"><img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                      <figure class="probootstrap-media"><img src="<?= Yii::getAlias('@myImages')?>/img_sm_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                       <div class="probootstrap-text">
                         <h3>Tempora consectetur unde nisi</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, dolores.</p>
@@ -199,7 +199,7 @@
                   <!-- END item -->
                   <div class="item">
                     <a href="#" class="probootstrap-featured-news-box">
-                      <figure class="probootstrap-media"><img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                      <figure class="probootstrap-media"><img src="<?= Yii::getAlias('@myImages')?>/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                       <div class="probootstrap-text">
                         <h3>Tempora consectetur unde nisi</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, earum.</p>
@@ -226,7 +226,7 @@
                 <div class="owl-carousel" id="owl2">
                   <div class="item">
                     <a href="#" class="probootstrap-featured-news-box">
-                      <figure class="probootstrap-media"><img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                      <figure class="probootstrap-media"><img src="<?= Yii::getAlias('@myImages')?>/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                       <div class="probootstrap-text">
                         <h3>Tempora consectetur unde nisi</h3>
                         <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
@@ -237,7 +237,7 @@
                   <!-- END item -->
                   <div class="item">
                     <a href="#" class="probootstrap-featured-news-box">
-                      <figure class="probootstrap-media"><img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                      <figure class="probootstrap-media"><img src="<?= Yii::getAlias('@myImages')?>/img_sm_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                       <div class="probootstrap-text">
                         <h3>Tempora consectetur unde nisi</h3>
                         <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
@@ -248,7 +248,7 @@
                   <!-- END item -->
                   <div class="item">
                     <a href="#" class="probootstrap-featured-news-box">
-                      <figure class="probootstrap-media"><img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                      <figure class="probootstrap-media"><img src="<?= Yii::getAlias('@myImages')?>/img_sm_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                       <div class="probootstrap-text">
                         <h3>Tempora consectetur unde nisi</h3>
                         <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
@@ -259,7 +259,7 @@
                   <!-- END item -->
                   <div class="item">
                     <a href="#" class="probootstrap-featured-news-box">
-                      <figure class="probootstrap-media"><img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
+                      <figure class="probootstrap-media"><img src="<?= Yii::getAlias('@myImages')?>/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
                       <div class="probootstrap-text">
                         <h3>Tempora consectetur unde nisi</h3>
                         <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
@@ -299,7 +299,7 @@
         <div class="probootstrap-service-2 probootstrap-animate">
           <div class="image">
             <div class="image-bg">
-              <img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+              <img src="<?= Yii::getAlias('@myImages')?>/img_sm_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
             </div>
           </div>
           <div class="text">
@@ -313,7 +313,7 @@
         <div class="probootstrap-service-2 probootstrap-animate">
           <div class="image">
             <div class="image-bg">
-              <img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+              <img src="<?= Yii::getAlias('@myImages')?>/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
             </div>
           </div>
           <div class="text">
@@ -329,7 +329,7 @@
         <div class="probootstrap-service-2 probootstrap-animate">
           <div class="image">
             <div class="image-bg">
-              <img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+              <img src="<?= Yii::getAlias('@myImages')?>/img_sm_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
             </div>
           </div>
           <div class="text">
@@ -343,7 +343,7 @@
         <div class="probootstrap-service-2 probootstrap-animate">
           <div class="image">
             <div class="image-bg">
-              <img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/img_sm_4.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+              <img src="<?= Yii::getAlias('@myImages')?>/img_sm_4.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
             </div>
           </div>
           <div class="text">
@@ -373,7 +373,7 @@
       <div class="col-md-3 col-sm-6">
         <div class="probootstrap-teacher text-center probootstrap-animate">
           <figure class="media">
-            <img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/person_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive">
+            <img src="<?= Yii::getAlias('@myImages')?>/person_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive">
           </figure>
           <div class="text">
             <h3>Chris Worth</h3>
@@ -390,7 +390,7 @@
       <div class="col-md-3 col-sm-6">
         <div class="probootstrap-teacher text-center probootstrap-animate">
           <figure class="media">
-            <img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/person_5.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive">
+            <img src="<?= Yii::getAlias('@myImages')?>/person_5.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive">
           </figure>
           <div class="text">
             <h3>Janet Morris</h3>
@@ -408,7 +408,7 @@
       <div class="col-md-3 col-sm-6">
         <div class="probootstrap-teacher text-center probootstrap-animate">
           <figure class="media">
-            <img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/person_6.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive">
+            <img src="<?= Yii::getAlias('@myImages')?>/person_6.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive">
           </figure>
           <div class="text">
             <h3>Linda Reyez</h3>
@@ -425,7 +425,7 @@
       <div class="col-md-3 col-sm-6">
         <div class="probootstrap-teacher text-center probootstrap-animate">
           <figure class="media">
-            <img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/person_7.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive">
+            <img src="<?= Yii::getAlias('@myImages')?>/person_7.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive">
           </figure>
           <div class="text">
             <h3>Jessa Sy</h3>
@@ -443,7 +443,7 @@
 
   </div>
 </section>
-<section class="probootstrap-section probootstrap-bg probootstrap-section-colored probootstrap-testimonial" style="background-image: url(<?= Yii::$app->request->baseUrl . '/uploads/images'?>/slider_4.jpg);">
+<section class="probootstrap-section probootstrap-bg probootstrap-section-colored probootstrap-testimonial" style="background-image: url(<?= Yii::getAlias('@myImages')?>/slider_4.jpg);">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
@@ -459,7 +459,7 @@
 
             <div class="probootstrap-testimony-wrap text-center">
               <figure>
-                <img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/person_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+                <img src="<?= Yii::getAlias('@myImages')?>/person_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
               </figure>
               <blockquote class="quote">&ldquo;Design must be functional and functionality must be translated into visual aesthetics, without any reliance on gimmicks that have to be explained.&rdquo; <cite class="author"> &mdash; <span>Mike Fisher</span></cite></blockquote>
             </div>
@@ -468,7 +468,7 @@
           <div class="item">
             <div class="probootstrap-testimony-wrap text-center">
               <figure>
-                <img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/person_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+                <img src="<?= Yii::getAlias('@myImages')?>/person_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
               </figure>
               <blockquote class="quote">&ldquo;Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn’t really do it, they just saw something. It seemed obvious to them after a while.&rdquo; <cite class="author"> &mdash;<span>Jorge Smith</span></cite></blockquote>
             </div>
@@ -476,7 +476,7 @@
           <div class="item">
             <div class="probootstrap-testimony-wrap text-center">
               <figure>
-                <img src="<?= Yii::$app->request->baseUrl . '/uploads/images'?>/person_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+                <img src="<?= Yii::getAlias('@myImages')?>/person_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
               </figure>
               <blockquote class="quote">&ldquo;I think design would be better if designers were much more skeptical about its applications. If you believe in the potency of your craft, where you choose to dole it out is not something to take lightly.&rdquo; <cite class="author">&mdash; <span>Brandon White</span></cite></blockquote>
             </div>
