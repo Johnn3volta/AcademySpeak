@@ -93,23 +93,23 @@ class ProgramsCatsController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
-    {
+    public function actionUpdate($id){
         $model = $this->findModel($id);
         $image = $model->getImage();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $model->image = UploadedFile::getInstance($model,'image');
+        if($model->load(Yii::$app->request->post()) && $model->save()){
+            $model->image = UploadedFile::getInstance($model, 'image');
             if(($model->image && $model->image->error == 0)){
                 $model->upload();
             }
-            Yii::$app->session->setFlash('success','Категория успешно обновлена !');
+            Yii::$app->session->setFlash('success', 'Категория успешно обновлена !');
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
             'model' => $model,
-            'image' =>$image
+            'image' => $image,
         ]);
     }
 

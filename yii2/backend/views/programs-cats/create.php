@@ -5,6 +5,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\ProgramsCats */
+/* @var $image common\models\ProgramsCats */
 
 $this->title = 'Создать категорию программ';
 $this->params['breadcrumbs'][] = ['label' => 'Категория программ', 'url' => ['index']];

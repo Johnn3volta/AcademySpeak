@@ -75,7 +75,7 @@ AppAssetIe9::register($this);
                   'items' => [
                       ['label' => 'Главная','url' => Yii::$app->homeUrl,'options' =>['class' => 'active']],
                       [
-                          'label'    => 'Программы',
+                          'label'    => 'Направления деятельности',
                           'url'      => ['/programs'],
                           'options'  => ['class' => 'dropdown'],
                           'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
@@ -85,20 +85,20 @@ AppAssetIe9::register($this);
                               'options' => ['class' => 'dropdown-menu']
                           ]
                       ],
-                      ['label' => 'Диагностика','url' => '#'],
-                      ['label' => 'Услуги и цены','url' => '#'],
-                      [
-                          'label'    => 'О нас',
-                          'url'      => ['/site/about'],
-                          'options'  => ['class' => 'dropdown'],
-                          'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
-                          'items' => [
-                              ['label' => 'Новости','url' => '#'],
-                              ['label' => 'Полезные статьи', 'url' => '#'],
-                              ['label' => 'Фотогалерея', 'url' => '#'],
-                              ['label' => 'Вопрос-Ответ', 'url' => '#'],
-                          ]
-                      ],
+//                      ['label' => 'Диагностика','url' => '#'],
+                      ['label' => 'Прайс-лист','url' => '#'],
+//                      [
+//                          'label'    => 'О нас',
+//                          'url'      => ['/site/about'],
+//                          'options'  => ['class' => 'dropdown'],
+//                          'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
+//                          'items' => [
+//                              ['label' => 'Новости','url' => '#'],
+//                              ['label' => 'Полезные статьи', 'url' => '#'],
+//                              ['label' => 'Фотогалерея', 'url' => '#'],
+//                              ['label' => 'Вопрос-Ответ', 'url' => '#'],
+//                          ]
+//                      ],
                       ['label' => 'Контакты', 'url' => ['/site/contact']]
                   ],
                   'options' => [

@@ -7,14 +7,8 @@ use yii\helpers\Html;
 /* @var $image common\models\ProgramsCats */
 
 $this->title = 'Обновить категорию программ';
-$this->params['breadcrumbs'][] = [
-    'label' => 'Категория программ',
-    'url'   => ['index'],
-];
-$this->params['breadcrumbs'][] = [
-    'label' => $model->name,
-    'url'   => ['view', 'id' => $model->id],
-];
+$this->params['breadcrumbs'][] = ['label' => 'Категория программ', 'url'   => ['index'],];
+$this->params['breadcrumbs'][] = ['label' => $model->name,'url'   => ['view', 'id' => $model->id],];
 $this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="programs-cats-update">

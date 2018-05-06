@@ -5,6 +5,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\ProgramsArticles */
+/* @var $image common\models\ProgramsArticles */
 /* @var $parents array */
 
 
@@ -18,7 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
-        'parents' => $parents
+        'parents' => $parents,
+        'image' => $image
 
     ]) ?>
 

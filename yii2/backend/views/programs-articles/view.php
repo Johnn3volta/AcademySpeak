@@ -5,10 +5,12 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\ProgramsArticles */
+/* @var $image common\models\ProgramsArticles */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Программы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$image = $image->getPath('150x150')
 ?>
 <div class="programs-articles-view">
 
@@ -33,6 +35,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'url:url',
             'parent_id',
+            [
+                'attribute' => 'image',
+                'value' => "<img src='../$image' >",
+                'format' => 'html'
+            ],
             'created_at:datetime',
             'updated_at:datetime',
         ],

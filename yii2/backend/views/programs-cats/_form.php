@@ -43,12 +43,12 @@ $img = $image->getPath('350x350')
       </div>
       <div class="col-md-5">
         <div class="col-md-12">
+            <?= $form->field($model, 'image')->fileInput() ?>
+        </div>
+        <div class="col-md-12">
           <?php if(isset($image)):?>
           <?= Html::img("../$img",['style' => 'padding:25px 0'])?>
           <?php endif;?>
-        </div>
-        <div class="col-md-12">
-            <?= $form->field($model, 'image')->fileInput() ?>
         </div>
       </div>
     </div>

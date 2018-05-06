@@ -10,6 +10,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ProgramsArticlesController implements the CRUD actions for ProgramsArticles
@@ -64,9 +65,9 @@ class ProgramsArticlesController extends Controller{
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id){
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        $model = $this->findModel($id);
+        $image = $model->getImage();
+        return $this->render('view', compact('model','image'));
     }
 
     /**
@@ -81,14 +82,13 @@ class ProgramsArticlesController extends Controller{
 
         $parents = $model->parentsCats();
 
+        $image = $model->getImage();
+
         if($model->load(Yii::$app->request->post()) && $model->save()){
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render('create', [
-            'model'   => $model,
-            'parents' => $parents,
-        ]);
+        return $this->render('create', compact('model','parents','image'));
     }
 
     /**
@@ -103,16 +103,23 @@ class ProgramsArticlesController extends Controller{
      */
     public function actionUpdate($id){
         $model = $this->findModel($id);
-
         $parents = $model->parentsCats();
+        $image = $model->getImage();
 
         if($model->load(Yii::$app->request->post()) && $model->save()){
+            $model->image = UploadedFile::getInstance($model, 'image');
+            if(($model->image && $model->image->error == 0)){
+                $model->upload();
+            }
+            Yii::$app->session->setFlash('success', 'Данные успешно обновлены !');
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
             'model'   => $model,
             'parents' => $parents,
+            'image' => $image
         ]);
     }
 
@@ -127,6 +134,7 @@ class ProgramsArticlesController extends Controller{
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id){
+        $this->findModel($id)->removeImages();
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

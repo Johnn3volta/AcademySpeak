@@ -24,17 +24,22 @@ use yii\behaviors\TimestampBehavior;
  */
 class ProgramsArticles extends \yii\db\ActiveRecord{
 
+    public $image;
+
     public function behaviors(){
         return [
             [
                 'class' => TimestampBehavior::class,
             ],
             'slug' => [
-                'class' => 'common\behaviors\Slug',
-                'in_attribute' => 'name',
+                'class'         => 'common\behaviors\Slug',
+                'in_attribute'  => 'seo_h1',
                 'out_attribute' => 'url',
-                'translit' => true
-            ]
+                'translit'      => true,
+            ],
+            'image' => [
+                'class' => 'rico\yii2images\behaviors\ImageBehave',
+            ],
         ];
     }
 
@@ -51,10 +56,10 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
     public function rules(){
         return [
             [
-                ['name', 'text', 'title', 'description', 'parent_id'],
+                ['name', 'text', 'title', 'parent_id','seo_h1'],
                 'required',
             ],
-            [['url'],'unique'],
+            [['url'], 'unique'],
             [['text'], 'string'],
             [['parent_id', 'created_at', 'updated_at'], 'integer'],
             [
@@ -62,6 +67,7 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
                 'string',
                 'max' => 255,
             ],
+            [['image'], 'file', 'extensions' => 'png, jpg'],
             [
                 ['parent_id'],
                 'exist',
@@ -84,6 +90,7 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
             'description' => 'Описание страницы(Description)',
             'keywords'    => 'Кейвордс(Keywords) ',
             'url'         => 'ЧПУ',
+            'image'       => 'Картинка',
             'parent_id'   => 'Родительская категория',
             'created_at'  => 'Создан',
             'updated_at'  => 'Обновлен',
@@ -108,6 +115,21 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
     }
 
     public function parentsCats(){
-        return $parentsCategories = ProgramsCats::find()->select('name')->indexBy('id')->column();
+        return $parentsCategories = ProgramsCats::find()
+                                                ->select('name')
+                                                ->indexBy('id')
+                                                ->column();
+    }
+
+    public function upload(){
+        if($this->validate()){
+            $path = Yii::getAlias('@myStore'). $this->image->baseName . '.' . $this->image->extension;
+            $this->image->saveAs($path);
+            $this->attachImage($path,true);
+            @unlink($path);
+            return true;
+        }else{
+            return false;
+        }
     }
 }

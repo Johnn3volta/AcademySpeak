@@ -5,13 +5,14 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\ProgramsCats */
+/* @var $image common\models\ProgramsCats */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Категория программ', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$image = $image->getPath('150x150')
 ?>
 <div class="programs-cats-view">
-    <?php $image = $image->getPath('150x150') ?>
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
