@@ -76,7 +76,7 @@ class ProgramsCats extends \yii\db\ActiveRecord{
             'id'          => 'ID',
             'name'        => 'Название',
             'seo_h1'      => 'Заголовок H1',
-            'text'        => 'Ткст',
+            'text'        => 'Текст',
             'title'       => 'Тайтл',
             'description' => 'Опсиание страницы(Description)',
             'keywords'    => 'Ключевые слова(Keywords)',
