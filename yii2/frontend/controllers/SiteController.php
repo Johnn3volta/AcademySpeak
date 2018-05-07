@@ -53,6 +53,7 @@ class SiteController extends MetaController{
         return [
             'error'   => [
                 'class' => 'yii\web\ErrorAction',
+                'view' => '@frontend/views/site/custom-error.php'
             ],
             'captcha' => [
                 'class'           => 'yii\captcha\CaptchaAction',

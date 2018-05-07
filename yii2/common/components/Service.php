@@ -13,4 +13,14 @@ class Service extends Component{
         return 'Hello';
     }
 
+    public function statusCode($code){
+        $str = '';
+        $arr = str_split($code);
+        for($i = 0;$i <= count($arr);$i++){
+            $str .= "<span>$arr[$i]</span>";
+        }
+
+        return $str;
+    }
+
 }

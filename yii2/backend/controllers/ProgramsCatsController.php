@@ -114,11 +114,12 @@ class ProgramsCatsController extends Controller
     }
 
     /**
-     * Deletes an existing ProgramsCats model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
+     *
+     * @return \yii\web\Response
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     * @throws \yii\web\NotFoundHttpException
      */
     public function actionDelete($id){
 
