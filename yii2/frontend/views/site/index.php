@@ -5,7 +5,7 @@
 ?>
 <section class="flexslider">
   <ul class="slides">
-    <li style="background-image: url(<?= Yii::getAlias('@myImages')?>/slides/slide_2.jpg)" class="overlay">
+    <li style="background-image: url(<?= Yii::getAlias('@myImages')?>/slides/slide_1.jpg)" class="overlay">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
