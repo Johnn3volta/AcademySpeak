@@ -67,7 +67,7 @@ AppAssetIe9::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" title="ProBootstrap:Enlight">Enlight</a>
+              <?= Html::a(Yii::$app->name,['/site/index'],['class' => 'navbar-brand']) ?>
             </div>
 
             <div id="navbar-collapse" class="navbar-collapse collapse">

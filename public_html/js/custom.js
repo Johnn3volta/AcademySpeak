@@ -1,6 +1,8 @@
 jQuery(document).ready(function() {
 	
 	"use strict";
-	// Your custom js code goes here.
+    // $('.nav .navbar-nav .navbar-right ul li a').each(function () {
+    //     if (this.href === location.href) $(this).parent().addClass('active');
+    // });
 
 });
