@@ -87,19 +87,27 @@ AppAssetIe9::register($this);
                       ],
 //                      ['label' => 'Диагностика','url' => '#'],
                       ['label' => 'Прайс-лист','url' => '#'],
-//                      [
-//                          'label'    => 'О нас',
-//                          'url'      => ['/site/about'],
-//                          'options'  => ['class' => 'dropdown'],
-//                          'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
-//                          'items' => [
-//                              ['label' => 'Новости','url' => '#'],
-//                              ['label' => 'Полезные статьи', 'url' => '#'],
-//                              ['label' => 'Фотогалерея', 'url' => '#'],
-//                              ['label' => 'Вопрос-Ответ', 'url' => '#'],
-//                          ]
-//                      ],
-                      ['label' => 'Контакты', 'url' => ['/site/contact']]
+                      ['label'    => 'О компании',
+                       'url'      => '#',
+                       'options'  => ['class'=>'dropdown'],
+                       'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
+                       'items'    => [
+                                                      ['label' => 'Отзывы', 'url' => '#'],
+                           ['label' => 'Контакты', 'url' => ['/site/contact']],
+                       ],
+                      ],
+                      [
+                          'label'    => 'Еще ...',
+                          'url'      => ['/site/about'],
+                          'options'  => ['class' => 'dropdown'],
+                          'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
+                          'items' => [
+                              ['label' => 'Новости','url' => '#'],
+                              ['label' => 'Полезные статьи', 'url' => '#'],
+                              ['label' => 'Фотогалерея', 'url' => '#'],
+                              ['label' => 'Вопрос-Ответ', 'url' => '#'],
+                          ]
+                      ],
                   ],
                   'options' => [
                       'class' => 'nav navbar-nav navbar-right'
