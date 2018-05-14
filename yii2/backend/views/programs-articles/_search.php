@@ -18,27 +18,23 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
-
-    <?= $form->field($model, 'name') ?>
-
-    <?= $form->field($model, 'text') ?>
-
-    <?= $form->field($model, 'seo_h1') ?>
-
-    <?= $form->field($model, 'title') ?>
-
-    <?= $form->field($model, 'description') ?>
-
-    <?php // echo $form->field($model, 'keywords') ?>
-
-    <?php // echo $form->field($model, 'url') ?>
-
-    <?php // echo $form->field($model, 'parent_id') ?>
-
-    <?php // echo $form->field($model, 'created_at') ?>
-
-    <?php // echo $form->field($model, 'updated_at') ?>
+<div class="row">
+  <div class="col-md-6">
+      <?= $form->field($model, 'name') ?>
+  </div>
+  <div class="col-md-6">
+      <?= $form->field($model, 'seo_h1') ?>
+  </div>
+  <div class="col-md-6">
+      <?= $form->field($model, 'url') ?>
+  </div>
+  <div class="col-md-3">
+      <?= $form->field($model, 'parent_id') ?>
+  </div>
+  <div class="col-md-3">
+      <?= $form->field($model, 'price') ?>
+  </div>
+</div>
 
     <div class="form-group">
         <?= Html::submitButton('Найти', ['class' => 'btn btn-primary']) ?>
@@ -46,5 +42,5 @@ use yii\widgets\ActiveForm;
     </div>
 
     <?php ActiveForm::end(); ?>
-
+  <hr>
 </div>

@@ -12,10 +12,12 @@ use yii\behaviors\TimestampBehavior;
  * @property string $name
  * @property string $seo_h1
  * @property string $text
+ * @property string $text2
  * @property string $title
  * @property string $description
  * @property string $keywords
  * @property string $url
+ * @property string $price
  * @property int $parent_id
  * @property int $created_at
  * @property int $updated_at
@@ -31,7 +33,7 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
             [
                 'class' => TimestampBehavior::class,
             ],
-            'slug' => [
+            'slug'  => [
                 'class'         => 'common\behaviors\Slug',
                 'in_attribute'  => 'seo_h1',
                 'out_attribute' => 'url',
@@ -56,17 +58,18 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
     public function rules(){
         return [
             [
-                ['name', 'text', 'title', 'parent_id','seo_h1'],
+                ['name', 'text', 'title', 'parent_id', 'seo_h1'],
                 'required',
             ],
             [['url'], 'unique'],
-            [['text'], 'string'],
+            [['text','text2'], 'string'],
             [['parent_id', 'created_at', 'updated_at'], 'integer'],
             [
                 ['name', 'title', 'description', 'keywords', 'url', 'seo_h1'],
                 'string',
                 'max' => 255,
             ],
+            [['price'], 'number'],
             [['image'], 'file', 'extensions' => 'png, jpg'],
             [
                 ['parent_id'],
@@ -86,10 +89,12 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
             'id'          => 'ID',
             'name'        => 'Название',
             'text'        => 'Текст',
+            'text2'       => 'Доп. информация',
             'title'       => 'Тайтл(Title)',
             'description' => 'Описание страницы(Description)',
             'keywords'    => 'Кейвордс(Keywords) ',
             'url'         => 'ЧПУ',
+            'price'       => 'Цена',
             'image'       => 'Картинка',
             'parent_id'   => 'Родительская категория',
             'created_at'  => 'Создан',
@@ -123,10 +128,11 @@ class ProgramsArticles extends \yii\db\ActiveRecord{
 
     public function upload(){
         if($this->validate()){
-            $path = Yii::getAlias('@myStore'). $this->image->baseName . '.' . $this->image->extension;
+            $path = Yii::getAlias('@myStore') . $this->image->baseName . '.' . $this->image->extension;
             $this->image->saveAs($path);
-            $this->attachImage($path,true);
+            $this->attachImage($path, true);
             @unlink($path);
+
             return true;
         }else{
             return false;

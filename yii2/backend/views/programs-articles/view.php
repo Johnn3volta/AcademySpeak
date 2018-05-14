@@ -35,6 +35,7 @@ $image = $image->getPath('150x150')
             'name',
             'url:url',
             'parent_id',
+            'price',
             [
                 'attribute' => 'image',
                 'value' => "<img src='../$image' >",

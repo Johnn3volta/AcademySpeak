@@ -28,10 +28,13 @@ $img = $image->getPath('350x350')
       <div class="col-md-12">
           <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
       </div>
-      <div class="col-md-12">
+        <div class="col-md-6">
           <?= $form->field($model, 'parent_id')
                    ->dropDownList($parents, ['prompt' => '-- Выберите родительскую категорию --']) ?>
-      </div>
+        </div>
+        <div class="col-md-6">
+            <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
+        </div>
       <div class="col-md-12">
           <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
       </div>
@@ -47,7 +50,6 @@ $img = $image->getPath('350x350')
       </div>
     </div>
     <div class="col-md-5">
-
       <div class="col-md-12">
           <?= $form->field($model, 'image')->fileInput() ?>
       </div>
@@ -70,6 +72,13 @@ $img = $image->getPath('350x350')
         ]),
     ]); ?>
 
+
+    <?= $form->field($model, 'text2')->widget(CKEditor::class, [
+        'editorOptions' => ElFinder::ckeditorOptions('elfinder', [
+            'preset' => 'standard',
+            'inline' => false,
+        ]),
+    ]); ?>
 
   <div class="form-group">
       <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

@@ -18,7 +18,7 @@ class ProgramsArticlesSearch extends ProgramsArticles
     public function rules()
     {
         return [
-            [['id', 'parent_id', 'created_at', 'updated_at'], 'integer'],
+            [['id', 'parent_id', 'created_at', 'updated_at','price'], 'integer'],
             [['name', 'text', 'title', 'description', 'keywords', 'url','seo_h1'], 'safe'],
         ];
     }
@@ -60,6 +60,7 @@ class ProgramsArticlesSearch extends ProgramsArticles
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'price' => $this->price,
             'parent_id' => $this->parent_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
