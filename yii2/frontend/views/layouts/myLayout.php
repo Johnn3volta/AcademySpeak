@@ -113,7 +113,6 @@ AppAssetIe9::register($this);
             </div>
         </div>
     </nav>
-<!--    --><?php //_end(\common\models\ProgramsCats::viewProgItems()) ?>
     <?= Alert::widget() ?>
     <?= $content ?>
 
