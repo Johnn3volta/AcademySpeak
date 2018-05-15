@@ -76,14 +76,10 @@ AppAssetIe9::register($this);
                       ['label' => 'Главная','url' => Yii::$app->homeUrl,'options' =>['class' => 'active']],
                       [
                           'label'    => 'Направления деятельности',
-                          'url'      => ['/programs'],
+                          'url'      => ['#'],
                           'options'  => ['class' => 'dropdown'],
                           'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
-                          'items' => [
-                              ['label' => 'Для детей', 'url' => ['/programs']],
-                              ['label' => 'Для взрослых','url' => '#'],
-                              'options' => ['class' => 'dropdown-menu']
-                          ]
+                          'items' => \common\models\ProgramsCats::viewProgItems()
                       ],
 //                      ['label' => 'Диагностика','url' => '#'],
                       ['label' => 'Прайс-лист','url' => '#'],
@@ -117,7 +113,7 @@ AppAssetIe9::register($this);
             </div>
         </div>
     </nav>
-
+<!--    --><?php //_end(\common\models\ProgramsCats::viewProgItems()) ?>
     <?= Alert::widget() ?>
     <?= $content ?>
 

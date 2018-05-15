@@ -114,4 +114,17 @@ class ProgramsCats extends \yii\db\ActiveRecord{
             return false;
         }
     }
+
+    public static function viewProgItems(){
+        $items = [];
+        $cats = ProgramsCats::find()->select(['name', 'url'])->asArray()->all();
+        for ($i = 0; $i < count($cats); $i++) {
+            $items[] = [
+                'label' => $cats[$i]['name'],
+                'url'   => '/napravleniya-deyatelnosti/' . $cats[$i]['url'],
+            ];
+        }
+
+        return $items;
+    }
 }

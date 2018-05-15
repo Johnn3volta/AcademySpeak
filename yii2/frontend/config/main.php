@@ -43,11 +43,11 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                '/' => 'site/index',
-                '<action:(about|contact|captcha)>' => 'site/<action>',
-                '/programs' => 'programs-cats/index',
-                'programs/<url:[\w-]+>' => 'programs-cats/program',
-//                '<parent_url:[\w-]+>/<url:[\w-]+>/print-out' => 'product/print-out',
+                '/'                                                          => 'site/index',
+                '<action:(about|contact|captcha)>'                           => 'site/<action>',
+                'napravleniya-deyatelnosti'                                  => 'programs-cats/index',
+                'napravleniya-deyatelnosti/<url:[\w-]+>'                     => 'programs-cats/program',
+                'napravleniya-deyatelnosti/<parent_url:[\w-]+>/<url:[\w-]+>' => 'program-article/index',
 //                '<parent_url:[\w-]+>/<url:[\w-]+>/print-out-blank' => 'product/print-out-blank',
 //                '<parent_url:[\w-]+>/<url:[\w-]+>' => 'product/view'
             ],
