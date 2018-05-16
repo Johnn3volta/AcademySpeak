@@ -30,7 +30,7 @@ $this->title = 'Ошибка '. $exception->statusCode;
             <div class="w3ls-text">
                 <h3>Извините !</h3>
                 <h4 class="w3-agileits2"> <?= nl2br(Html::encode($message)) ?>.</h4>
-                <p>Перейти на <?= Html::a('Главную',[Yii::$app->homeUrl],['class' => 'btn btn-info']) ?> .<br><br> Написать нам <?= Html::a(Yii::$app->params['adminEmail'],'mailto:'.Yii::$app->params['adminEmail'],['class' => 'btn btn-info']) ?></p>
+                <p>Перейти на <?= Html::a('Главную',[Yii::$app->homeUrl],['class' => 'btn btn-info']) ?> .<br><br> Написать нам <?= Html::mailto(Yii::$app->params['adminEmail'],Yii::$app->params['adminEmail'],['class' => 'btn btn-info']) ?></p>
             </div>
 
         </div>

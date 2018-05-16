@@ -32,14 +32,14 @@ use yii\helpers\StringHelper;
                 </div>
               </div>
               <div class="text">
-                <h3><?= $mod->name ?></h3>
+                <h3><?= Html::encode($mod->name) ?></h3>
                 <p><?= StringHelper::truncate(strip_tags($mod->text), 130, '...') ?></p>
                 <p>
                     <?= Html::a('Подробнее ...', [
                         'programs-cats/program',
                         'url' => $mod->url,
-                    ], ['class' => 'btn btn-primary']) ?><span
-                      class="enrolled-count">Суда передадим количество программ</span>
+                    ], ['class' => 'btn btn-primary']) ?>
+                  <?= Html::tag('span','Суда передадим количество программ',['class' => 'enrolled-count']) ?>
                 </p>
               </div>
             </div>
