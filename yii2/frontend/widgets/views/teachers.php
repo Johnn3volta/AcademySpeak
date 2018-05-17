@@ -1,6 +1,34 @@
 <?php
 ?>
-<section class="probootstrap-section">
+<section class="probootstrap-section teachers">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="profile probootstrap-teacher probootstrap-animate fadeInUp probootstrap-animated">
+            <div class="col-sm-12">
+              <div class="col-xs-12 col-sm-8">
+                <h2>Сергей Иванов</h2>
+                <p><strong>Обо мне: </strong> Веб-дизайнер. </p>
+                <p><strong>Хобби: </strong> Книги, природа, активный отдых, сайтостроение, дизайн, верстка </p>
+                <p><strong>Знания: </strong>
+                  <span class="tags">HTML5</span>
+                  <span class="tags">CSS3</span>
+                  <span class="tags">jQuery</span>
+                  <span class="tags">Bootstrap</span>
+                </p>
+              </div>
+              <div class="col-xs-12 col-sm-4 text-center">
+                <figure>
+                  <?= \yii\helpers\Html::img('@teachers/user-profile.jpg',['alt' =>'teacher','class' => 'img-circle img-responsive']) ?>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!--<section class="probootstrap-section">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
@@ -8,7 +36,6 @@
                 <p class="lead">Sed a repudiandae impedit voluptate nam Deleniti dignissimos perspiciatis nostrum porro nesciunt</p>
             </div>
         </div>
-        <!-- END row -->
 
         <div class="row">
             <div class="col-md-3 col-sm-6">
@@ -81,7 +108,6 @@
                 </div>
             </div>
         </div>
-
     </div>
-</section>
+</section>-->
 

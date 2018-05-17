@@ -4,48 +4,38 @@
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\ContactForm */
 
+use frontend\components\BreadcrumbsUtility;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use yii\widgets\Breadcrumbs;
 
-$this->title = 'Обратная связь';
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="site-contact">
-
-
   <section class="probootstrap-section probootstrap-section-colored">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-left section-heading probootstrap-animate">
-          <h1><?= Html::encode($this->title) ?></h1>
+          <?= Html::tag('h1','Обратная связь') ?>
+            <?= Breadcrumbs::widget([
+                'homeLink' => BreadcrumbsUtility::getHome('Главная', Yii::$app->getHomeUrl()), // получаем главную страницу с микроданными
+                'links' => isset($this->params['breadcrumbs']) ? BreadcrumbsUtility::UseMicroData($this->params['breadcrumbs']) : [], // получаем остальные хлебные крошки с микроданными
+                'options' => [ // назначаем контейнеру разметку BreadcrumbList
+                    'class' => 'breadcrumb',
+                    'itemscope itemtype' => 'https://schema.org/BreadcrumbList'
+                ],
+            ]) ?>
         </div>
       </div>
     </div>
   </section>
-
-
-
   <section class="probootstrap-section probootstrap-section-sm">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="row probootstrap-gutter0">
-            <div class="col-md-4" id="probootstrap-sidebar">
-              <div class="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate">
-<!--                <h3>Pages</h3>-->
-<!--                <ul class="probootstrap-side-menu">-->
-<!---->
-<!--                  <li><a href="index.html">Home</a></li>-->
-<!--                  <li><a href="courses.html">Courses</a></li>-->
-<!--                  <li><a href="teachers.html">Teachers</a></li>-->
-<!--                  <li><a href="events.html">Events</a></li>-->
-<!--                  <li><a href="about.html">About Us</a></li>-->
-<!--                  <li class="active"><a>Contact Us</a></li>-->
-<!--                </ul>-->
-              </div>
-            </div>
-            <div class="col-md-7 col-md-push-1  probootstrap-animate" id="probootstrap-content">
+            <div class="col-md-offset-2 col-md-8 probootstrap-animate" id="probootstrap-content">
               <h2>Форма обратной связи</h2>
                 <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
                 <div class="form-group">
@@ -73,8 +63,4 @@ $this->params['breadcrumbs'][] = $this->title;
       </div>
     </div>
   </section>
-
-
-
-
 </div>

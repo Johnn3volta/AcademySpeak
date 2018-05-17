@@ -24,7 +24,7 @@ echo Html::beginTag('html',['lang' =>Yii::$app->language,'prefix' => 'og: http:/
       echo Html::JsFile('/js/vendor/respond.min.js')."\n";
       echo "<![endif]-->\n";
   echo Html::endTag('head');
-  echo Html::beginTag('body');
+  echo Html::beginTag('body',['class' => Yii::$app->controller->id.'-'.Yii::$app->controller->action->id]);
   $this->beginBody() ;
   echo $this->render('//common/header') ;
     echo Alert::widget() ;

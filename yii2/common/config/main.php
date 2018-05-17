@@ -12,9 +12,6 @@ return [
         'cache'   => [
             'class' => 'yii\caching\FileCache',
         ],
-        'service' => [
-            'class' => 'common\components\Service',
-        ],
     ],
     'modules'    => [
         'yii2images' => [

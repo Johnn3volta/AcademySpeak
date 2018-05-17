@@ -1,1 +1,82 @@
 /* Your custom css code goes here */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+.probootstrap-section {
+    padding: 2em 0;
+}
+
+.site-index .probootstrap-section {
+    padding: 4em 0;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.site-index .section-heading {
+    margin-bottom: 0;
+}
+
+.teachers {
+    font-family: 'Lato', 'sans-serif';
+}
+
+.teachers img {
+    margin: 0 auto;
+}
+
+.profile {
+    min-height: 300px;
+}
+
+span.tags {
+    background: #1abc9c;
+    border-radius: 2px;
+    color: #f5f5f5;
+    font-weight: bold;
+    padding: 2px 4px;
+}
+
+.well {
+
+}
+
+.breadcrumb > li + li:before {
+    content: '\f100';
+    font-family: FontAwesome, sans-serif;
+    color: #6a41ed;
+}
+
+.breadcrumb li a {
+    color: #49D292
+}
+.breadcrumb li a:hover{
+    color: lightgreen;
+    text-decoration: underline;
+}
+
+.breadcrumb li a.active {
+    color: grey;
+}
+
+
+/*media styles*/
+@media screen and (max-width: 425px) {
+    .profile {
+        min-height: 555px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .profile {
+        min-height: 615px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .profile {
+        min-height: 655px;
+    }
+}
+
+

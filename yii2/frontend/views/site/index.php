@@ -49,7 +49,7 @@ use frontend\widgets\Testimonials;
 <section class="probootstrap-section probootstrap-section-colored">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 text-left section-heading probootstrap-animate">
+      <div class="col-md-12 text-center section-heading probootstrap-animate">
         <h2>Школа правильной речи AcademySpeak</h2>
       </div>
     </div>
@@ -127,7 +127,7 @@ use frontend\widgets\Testimonials;
 
 <?= Teachers::widget();?>
 
-<?= Testimonials::widget();?>
+<?//= Testimonials::widget();?>
 
 
 

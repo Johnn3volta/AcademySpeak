@@ -52,6 +52,9 @@ return [
 //                '<parent_url:[\w-]+>/<url:[\w-]+>' => 'product/view'
             ],
         ],
+        'service' => [
+            'class' => 'frontend\components\Service',
+        ],
     ],
     'params' => $params,
 ];

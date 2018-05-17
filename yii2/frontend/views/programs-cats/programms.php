@@ -1,17 +1,30 @@
 <?php
 /* @var $this yii\web\View */
 
+use frontend\components\BreadcrumbsUtility;
 use yii\helpers\Html;
 use yii\helpers\StringHelper;
+use yii\helpers\Url;
+use yii\widgets\Breadcrumbs;
 
 /* @var $model common\models\ProgramsCats */
+
+$this->params['breadcrumbs'][] = ['label' => 'Направления деятельности', 'url' =>Url::current()];
 ?>
 
 <section class="probootstrap-section probootstrap-section-colored">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-left section-heading probootstrap-animate">
-        <h1>Развивающие программы</h1>
+        <?= Html::tag('h1','Направления деятельности') ?>
+          <?= Breadcrumbs::widget([
+              'homeLink' => BreadcrumbsUtility::getHome('Главная', Yii::$app->getHomeUrl()), // получаем главную страницу с микроданными
+              'links' => isset($this->params['breadcrumbs']) ? BreadcrumbsUtility::UseMicroData($this->params['breadcrumbs']) : [], // получаем остальные хлебные крошки с микроданными
+              'options' => [ // назначаем контейнеру разметку BreadcrumbList
+                  'class' => 'breadcrumb',
+                  'itemscope itemtype' => 'https://schema.org/BreadcrumbList'
+              ],
+          ]) ?>
       </div>
     </div>
   </div>

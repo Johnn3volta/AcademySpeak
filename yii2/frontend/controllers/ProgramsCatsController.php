@@ -18,7 +18,7 @@ class ProgramsCatsController extends MetaController{
         $description = 'Суда надо будет чтото написать';
         $model = ProgramsCats::find()->all();
         if($model){
-            $this->setMeta('Развивающие программы', $description);
+            $this->setMeta('Направления деятельности', $description);
 
             return $this->render('programms', ['model' => $model]);
         }

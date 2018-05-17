@@ -1,6 +1,6 @@
 <?php
 
-namespace common\components;
+namespace frontend\components;
 
 
 use yii\base\Component;

@@ -5,6 +5,7 @@ use Yii;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use frontend\models\ContactForm;
+use yii\helpers\Url;
 
 /**
  * Site controller
@@ -84,6 +85,7 @@ class SiteController extends MetaController{
         $this->description = 'Контактная информация и форма обратной связи';
         $this->title = 'Обратная связь | ' . Yii::$app->name;
         $this->setMeta($this->title, $this->description);
+        $this->view->params['breadcrumbs'][] = ['label' => 'Обратная связь', 'url' =>Url::current()];
 
         $model = new ContactForm();
         if($model->load(Yii::$app->request->post()) && $model->validate()){
