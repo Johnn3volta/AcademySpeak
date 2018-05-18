@@ -6,6 +6,7 @@ namespace frontend\controllers;
 
 use common\models\ProgramsArticles;
 use common\models\ProgramsCats;
+use yii\helpers\Url;
 use yii\web\NotFoundHttpException;
 
 class ProgramsCatsController extends MetaController{
@@ -35,11 +36,13 @@ class ProgramsCatsController extends MetaController{
         $program = ProgramsCats::findOne(['url' => $url]);
 
         if($program){
+            $this->view->params['breadcrumbs'][] = ['label' => 'Направления деятельности','url' => Url::toRoute(['programs-cats/index']) ];
+            $this->view->params['breadcrumbs'][] = ['label' => $program->name,'url' => Url::current()];
             $articles = ProgramsArticles::find()
                                         ->where(['parent_id' => $program->id])
                                         ->select(['name', 'url'])
                                         ->all();
-            $this->setMeta($program->title ? $program->title : '', $program->description ? $program->description : '');
+            $this->setMeta($program->title, $program->description );
 
             return $this->render('programa', compact('program', 'articles'));
         }

@@ -41,10 +41,19 @@ span.tags {
 
 }
 
+.breadcrumb > li:before{
+    content: "\f015";
+    font-family: FontAwesome, sans-serif;
+    color: black;
+    padding: 0 3px;
+    opacity: 0;
+}
+
 .breadcrumb > li + li:before {
     content: '\f100';
     font-family: FontAwesome, sans-serif;
     color: #6a41ed;
+    opacity: 1;
 }
 
 .breadcrumb li a {

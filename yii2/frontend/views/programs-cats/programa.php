@@ -5,15 +5,26 @@
  */
 
 
+use frontend\components\BreadcrumbsUtility;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\Breadcrumbs;
 
 ?>
 <?= Html::beginTag('section',['class' => 'probootstrap-section probootstrap-section-colored'])?>
   <?= Html::beginTag('div',['class' => 'container']) ?>
    <?= Html::beginTag('div',['class' => 'row']) ?>
     <?= Html::beginTag('div',['class' => 'col-md-12 text-left section-heading probootstrap-animate']) ?>
+
         <?= Html::tag('h1',$program->name) ?>
+<?= Breadcrumbs::widget([
+    'homeLink' => BreadcrumbsUtility::getHome('Главная', Yii::$app->getHomeUrl()), // получаем главную страницу с микроданными
+    'links' => isset($this->params['breadcrumbs']) ? BreadcrumbsUtility::UseMicroData($this->params['breadcrumbs']) : [], // получаем остальные хлебные крошки с микроданными
+    'options' => [ // назначаем контейнеру разметку BreadcrumbList
+        'class' => 'breadcrumb',
+        'itemscope itemtype' => 'https://schema.org/BreadcrumbList'
+    ],
+]) ?>
     <?= Html::endTag('div') ?>
    <?= Html::endTag('div') ?>
   <?= Html::endTag('div') ?>

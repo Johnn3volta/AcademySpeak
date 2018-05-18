@@ -1,25 +1,37 @@
 <?php
 /* @var $this yii\web\View */
+
+use frontend\components\BreadcrumbsUtility;
+use yii\widgets\Breadcrumbs;
+
+/* @var $article object */
 ?>
 
 <section class="probootstrap-section probootstrap-section-colored">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate">
-                <h1>Chemical Engineering</h1>
+                <?= \yii\helpers\Html::tag('h1',$article->name) ?>
+                <?= Breadcrumbs::widget([
+                    'homeLink' => BreadcrumbsUtility::getHome('Главная', Yii::$app->getHomeUrl()), // получаем главную страницу с микроданными
+                    'links' => isset($this->params['breadcrumbs']) ? BreadcrumbsUtility::UseMicroData($this->params['breadcrumbs']) : [], // получаем остальные хлебные крошки с микроданными
+                    'options' => [ // назначаем контейнеру разметку BreadcrumbList
+                        'class' => 'breadcrumb',
+                        'itemscope itemtype' => 'https://schema.org/BreadcrumbList'
+                    ],
+                ]) ?>
             </div>
         </div>
     </div>
 </section>
-
-
+<?php //_end($parents)?>
 
 <section class="probootstrap-section probootstrap-section-sm">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="row probootstrap-gutter0">
-                    <div class="col-md-4" id="probootstrap-sidebar">
+                    <!--<div class="col-md-4" id="probootstrap-sidebar">
                         <div class="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate">
                             <h3>More Courses</h3>
                             <ul class="probootstrap-side-menu">
@@ -29,8 +41,8 @@
                                 <li><a href="#">English Major</a></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-md-7 col-md-push-1  probootstrap-animate" id="probootstrap-content">
+                    </div>-->
+                    <div class="col-md-offset-4 col-md-7 col-md-push-1  probootstrap-animate" id="probootstrap-content">
                         <h2>Description</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime rerum possimus maiores, natus fugiat quibusdam dolorem. Dolore, odit ipsum, commodi distinctio repellendus vel tempore accusamus ea assumenda totam aut tempora. Illum sed harum, doloremque magnam nostrum. Fuga tempora corrupti unde ratione, placeat voluptates dicta asperiores est, ad voluptatem dolor, delectus sapiente voluptatum! Rerum magnam ducimus voluptas dolorum consectetur ex facilis quaerat sapiente eaque consequuntur perspiciatis nesciunt tenetur quibusdam corrupti voluptates consequatur repudiandae, quisquam aperiam veniam. Architecto voluptas blanditiis provident modi cumque a eius nam dignissimos numquam ducimus earum odit ipsam, reiciendis assumenda id quasi dolore, totam impedit molestias? Alias, ipsa!</p>
                         <p>Velit natus alias eligendi architecto rem, itaque distinctio? Excepturi obcaecati fuga ratione. Dolore in ipsam rem ullam nemo error aperiam dolores eius, doloremque blanditiis placeat fugiat libero id atque, recusandae, voluptate laboriosam, distinctio omnis ab. Eius obcaecati, laudantium ex voluptatum voluptas, cum vitae molestiae quam est omnis nulla, quis velit? Esse natus tempore molestias deserunt, tempora illum labore, fuga animi totam dolore doloribus doloremque laudantium velit distinctio, non cumque dolorem delectus quia quibusdam? Amet, consectetur. Reprehenderit unde, eveniet temporibus, quae possimus magni. Dolore quo eveniet, distinctio dicta quisquam? Aliquid libero dolore provident, beatae odit facilis quasi dolorum sit ad minus!</p>
