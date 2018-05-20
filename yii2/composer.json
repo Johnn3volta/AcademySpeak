@@ -22,7 +22,9 @@
         "mihaildev/yii2-ckeditor": "*",
         "mihaildev/yii2-elfinder": "*",
         "2amigos/yii2-transliterator-helper": "*",
-        "costa-rico/yii2-images": "dev-master"
+        "costa-rico/yii2-images": "dev-master",
+        "kartik-v/yii2-widget-datetimepicker": "^1.4",
+        "kartik-v/yii2-widget-timepicker": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -59,5 +59,10 @@
         </div>
     </div>
 </footer>
+<a href="#callback-popup" class="popup-with-form">Открыть форму в модальном окне</a>
+
+<div id="callback-popup" class="white-popup mfp-hide">
+  <?= \frontend\widgets\CallBack::widget() ?>
+</div>
 
 </div>

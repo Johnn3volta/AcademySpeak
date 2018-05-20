@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\CallBackForm;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -13,8 +14,11 @@ use yii\helpers\Url;
 class SiteController extends MetaController{
 
     public $description = '';
+
     public $keywords = '';
+
     public $title = '';
+
     public $website = 'website';
 
     /**
@@ -54,7 +58,7 @@ class SiteController extends MetaController{
         return [
             'error'   => [
                 'class' => 'yii\web\ErrorAction',
-                'view' => '@frontend/views/site/custom-error.php'
+                'view'  => '@frontend/views/site/custom-error.php',
             ],
             'captcha' => [
                 'class'           => 'yii\captcha\CaptchaAction',
@@ -73,6 +77,7 @@ class SiteController extends MetaController{
         $this->title = 'Главная страница';
         $this->keywords = '';
         $this->setMeta($this->title, $this->description);
+
         return $this->render('index');
     }
 
@@ -85,7 +90,10 @@ class SiteController extends MetaController{
         $this->description = 'Контактная информация и форма обратной связи';
         $this->title = 'Обратная связь | ' . Yii::$app->name;
         $this->setMeta($this->title, $this->description);
-        $this->view->params['breadcrumbs'][] = ['label' => 'Обратная связь', 'url' =>Url::current()];
+        $this->view->params['breadcrumbs'][] = [
+            'label' => 'Обратная связь',
+            'url'   => Url::current(),
+        ];
 
         $model = new ContactForm();
         if($model->load(Yii::$app->request->post()) && $model->validate()){
@@ -112,4 +120,12 @@ class SiteController extends MetaController{
         return $this->render('about');
     }
 
+    public function actionCallBack(){
+        $callback = new CallBackForm();
+        if(Yii::$app->request->isAjax){
+            if($callback->load(Yii::$app->request->post()) && $callback->sendCallBack(Yii::$app->params['adminEmail'])){
+              return "<div class='text-center text-success' style='padding: 25px 0; font-size:25px'>Ваша заявка принята !</div>";
+            }else return false;
+        }else return "<div class='text-center text-danger' style='padding: 25px 0; font-size:25px'>Упс ! <br>Чт-ото пошло не так. <br> Попробуйте позже .</div>";
+    }
 }

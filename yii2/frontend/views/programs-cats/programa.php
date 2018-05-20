@@ -52,6 +52,7 @@ use yii\widgets\Breadcrumbs;
     <?= Html::endTag('a') ?>
       <?= Html::endTag('div') ?>
       <?php endforeach; ?>
+<?= \frontend\widgets\CallBack::widget() ?>
       <?= Html::tag('div', '', ['class' => 'clearfix visible-sm-block visible-xs-block']) ?>
     <?= Html::endTag('div') ?>
   <?= Html::endTag('div') ?>

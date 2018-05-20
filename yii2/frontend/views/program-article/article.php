@@ -24,7 +24,7 @@ use yii\widgets\Breadcrumbs;
         </div>
     </div>
 </section>
-<?php //_end($parents)?>
+
 
 <section class="probootstrap-section probootstrap-section-sm">
     <div class="container">

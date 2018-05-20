@@ -620,11 +620,11 @@
 		magnificPopupControl();
 	});
 
-	jQuery(window).load(function(){
+	jQuery(window).on('load',function(e){
 		owlCarousel();
 		flexSlider();
 	});
 
 	
 
-})();
+})(jQuery);

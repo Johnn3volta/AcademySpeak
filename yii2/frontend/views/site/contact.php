@@ -71,15 +71,6 @@ use yii\widgets\Breadcrumbs;
       </div>
     </div>
   </section>
-<?php
-$js = <<<JS
-$('#contact-form').on('beforeSubmit',function() {
-  alert('Работает !');
-  return false;
-})
-JS;
 
-$this->registerJs($js);
 
-?>
 </div>

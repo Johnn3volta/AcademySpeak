@@ -1,6 +1,10 @@
 /* Your custom css code goes here */
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
+#call-back button {
+    outline: none; !important;
+}
+
 .probootstrap-section {
     padding: 2em 0;
 }
