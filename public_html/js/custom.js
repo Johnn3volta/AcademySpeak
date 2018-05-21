@@ -5,9 +5,8 @@ jQuery(document).ready(function() {
         if (this.href === location.href) $(this).addClass('active');
     });
 
-    $('.popup-with-form').magnificPopup({
-        type: 'inline',
-        focus: '#name'
+    $('#popup__toggle').magnificPopup({
+        focus: '#callbackform-name'
     });
 
 });

@@ -18,9 +18,9 @@ use yii\widgets\Menu;
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-9 probootstrap-top-quick-contact-info">
-                    <span><i class="icon-location2"></i>Brooklyn, NY 10036, United States</span>
-                    <span><i class="icon-phone2"></i>+1-123-456-7890</span>
-                    <span><i class="icon-mail"></i>pochta@gg.mail</span>
+                  <a href="<?= Yii::$app->params['skype'] ?>"><span><i class="icon-skype2"></i><?= Yii::$app->params['skype'] ?></span></a>
+                  <a href="tel:<?= Yii::$app->params['phone'] ?>"><span><i class="icon-phone2"></i><?= Yii::$app->params['phone'] ?></span></a>
+                  <a href="mailto:<?= Yii::$app->params['adminEmail'] ?>"><span><i class="icon-mail"></i><?= Yii::$app->params['adminEmail'] ?></span></a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 probootstrap-top-social">
                     <ul>
@@ -61,7 +61,7 @@ use yii\widgets\Menu;
                             'items' => \common\models\ProgramsCats::viewProgItems()
                         ],
 //                      ['label' => 'Диагностика','url' => '#'],
-                        ['label' => 'Прайс-лист','url' => '#'],
+                        ['label' => 'Прайс-лист','url' => ['/price-list']],
                         ['label'    => 'О компании',
                          'url'      => '#',
                          'options'  => ['class'=>'dropdown'],

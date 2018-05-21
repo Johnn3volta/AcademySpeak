@@ -4,6 +4,7 @@
 namespace frontend\controllers;
 
 
+use common\models\activequery\ProgramsCatsQuery;
 use common\models\ProgramsArticles;
 use common\models\ProgramsCats;
 use yii\helpers\Url;
@@ -18,10 +19,12 @@ class ProgramsCatsController extends MetaController{
     public function actionIndex(){
         $description = 'Суда надо будет чтото написать';
         $model = ProgramsCats::find()->all();
+
         if($model){
             $this->setMeta('Направления деятельности', $description);
+            $count = ProgramsCatsQuery::Counts($model);
 
-            return $this->render('programms', ['model' => $model]);
+            return $this->render('programms', ['model' => $model,'count' => $count]);
         }
         throw new NotFoundHttpException('Страница не найдена');
     }

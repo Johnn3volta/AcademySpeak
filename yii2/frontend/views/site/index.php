@@ -123,7 +123,7 @@ use frontend\widgets\Testimonials;
 
 <?//= \frontend\widgets\NewsBlock::widget(); ?>
 
-<?//= NapravleniyaDeyatelnosti::widget();?>
+<?= NapravleniyaDeyatelnosti::widget();?>
 
 <?= Teachers::widget();?>
 
@@ -135,8 +135,8 @@ use frontend\widgets\Testimonials;
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
-        <h2>Why Choose Enlight School</h2>
-        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
+        <h2>Почему выбирают нас</h2>
+<!--        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>-->
       </div>
     </div>
     <div class="row">

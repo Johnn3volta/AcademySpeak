@@ -42,7 +42,7 @@ return [
             'showScriptName'      => false,
             'rules'               => [
                 '/'                                                          => 'site/index',
-                '<action:(about|contact|captcha|call-back)>'                 => 'site/<action>',
+                '<action:(about|contact|captcha|call-back|price-list)>'      => 'site/<action>',
                 'napravleniya-deyatelnosti'                                  => 'programs-cats/index',
                 'napravleniya-deyatelnosti/<url:[\w-]+>'                     => 'programs-cats/program',
                 'napravleniya-deyatelnosti/<parent_url:[\w-]+>/<url:[\w-]+>' => 'program-article/index',

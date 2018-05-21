@@ -120,6 +120,12 @@ class SiteController extends MetaController{
         return $this->render('about');
     }
 
+    public function actionPriceList(){
+        $this->view->params['breadcrumbs'][] = ['label' => 'Прайс-лист','url' => Url::current()];
+        $this->setMeta('Прайс-лист по окозанию логопедических услуг','Прайс-лист по окозанию логопедических услуг для детей и взрослых');
+        return $this->render('price-list');
+    }
+
     public function actionCallBack(){
         $callback = new CallBackForm();
         if(Yii::$app->request->isAjax){

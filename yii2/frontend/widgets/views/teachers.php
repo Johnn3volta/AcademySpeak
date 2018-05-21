@@ -3,6 +3,11 @@
 <section class="probootstrap-section teachers">
     <div class="container">
       <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
+          <h2>Наши учителя</h2>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-12">
           <div class="profile probootstrap-teacher probootstrap-animate fadeInUp probootstrap-animated">
             <div class="col-sm-12">

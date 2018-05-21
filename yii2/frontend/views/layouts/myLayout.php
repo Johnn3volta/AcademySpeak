@@ -5,6 +5,7 @@
 use common\widgets\Alert;
 use frontend\assets\MyAppAsset;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 MyAppAsset::register($this);
 
@@ -17,7 +18,8 @@ echo Html::beginTag('html',['lang' =>Yii::$app->language,'prefix' => 'og: http:/
       echo Html::tag('meta','',['name' => 'viewport','content' => 'width=device-width, initial-scale=1'])."\n" ;
       echo Html::csrfMetaTags() ;
       echo Html::tag('title', Html::encode($this->title))."\n" ;
-      echo $this->registerLinkTag(['href' => 'https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans','rel' => 'stylesheet']) ;
+      $this->registerLinkTag(['rel' => 'shortcut icon', 'type' => 'image/x-icon', 'href' => Url::to(['/favicon.png'])]);
+//      echo $this->registerLinkTag(['href' => 'https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans','rel' => 'stylesheet']) ;
       $this->head() ;
       echo "\n<!--[if lte IE9]>\n";
       echo Html::JsFile('/js/vendor/html5shiv.min.js')."\n";
