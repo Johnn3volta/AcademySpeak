@@ -117,6 +117,8 @@ class SiteController extends MetaController{
      * @return mixed
      */
     public function actionAbout(){
+        $this->view->params['breadcrumbs'][] = ['label' => 'О нас','url' => Url::current()];
+        $this->setMeta('О нас','О нас');
         return $this->render('about');
     }
 

@@ -52,18 +52,18 @@ use yii\widgets\Menu;
             <div id="navbar-collapse" class="navbar-collapse collapse">
                 <?= Menu::widget([
                     'items' => [
-                        ['label' => 'Главная','url' => Yii::$app->homeUrl,'options' =>['class' => 'active']],
+                        ['label' => 'Главная','url' => Yii::$app->homeUrl],
                         [
                             'label'    => 'Направления деятельности',
-                            'url'      => ['#'],
+                            'url'      => ['/programs-cats/index'],
                             'options'  => ['class' => 'dropdown'],
                             'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
                             'items' => \common\models\ProgramsCats::viewProgItems()
                         ],
 //                      ['label' => 'Диагностика','url' => '#'],
                         ['label' => 'Прайс-лист','url' => ['/price-list']],
-                        ['label'    => 'О компании',
-                         'url'      => '#',
+                        ['label'    => 'О нас',
+                         'url'      => ['/about'],
                          'options'  => ['class'=>'dropdown'],
                          'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
                          'items'    => [
@@ -73,9 +73,9 @@ use yii\widgets\Menu;
                         ],
                         [
                             'label'    => 'Еще ...',
-                            'url'      => ['/site/about'],
+                            'url'      => '',
                             'options'  => ['class' => 'dropdown'],
-                            'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
+                            'template' => '<a data-toggle="dropdown" class="dropdown-toggle">{label}</a>',
                             'items' => [
                                 ['label' => 'Новости','url' => '#'],
                                 ['label' => 'Полезные статьи', 'url' => '#'],

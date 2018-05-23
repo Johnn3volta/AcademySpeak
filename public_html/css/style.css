@@ -488,6 +488,7 @@ a:hover, a:focus, a:active {
   color: black;
   font-size: 15px;
   position: relative;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,12 +1,39 @@
-jQuery(document).ready(function() {
-	
-	"use strict";
-    $('ul.breadcrumb li a').each(function () {
-        if (this.href === location.href) $(this).addClass('active');
+(function () {
+    "use strict";
+
+    var custom = {
+
+        initialize: function () {
+            this.addActive();
+            this.myMagnificPopup();
+        },
+
+        addActive: function () {
+
+            jQuery('.nav.navbar-nav.navbar-right li a').each(function () {
+                if (this.href === location.href) jQuery(this).parent().addClass('active');
+            });
+
+            jQuery('ul.breadcrumb li a').each(function () {
+                if (this.href === location.href) jQuery(this).addClass('active');
+            });
+        },
+
+
+        myMagnificPopup: function () {
+
+            jQuery('#popup__toggle').magnificPopup({
+                focus: '#callbackform-name'
+            });
+        }
+
+    };
+
+
+    jQuery(document).ready(function () {
+        custom.initialize();
     });
 
-    $('#popup__toggle').magnificPopup({
-        focus: '#callbackform-name'
-    });
+}(jQuery));
 
-});
+
