@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
-          <h2>Наши учителя</h2>
+          <h2>Наши специалисты</h2>
         </div>
       </div>
       <div class="row">
@@ -12,9 +12,9 @@
           <div class="profile probootstrap-teacher probootstrap-animate fadeInUp probootstrap-animated">
             <div class="col-sm-12">
               <div class="col-xs-12 col-sm-8">
-                <h2>Сергей Иванов</h2>
-                <p><strong>Обо мне: </strong> Веб-дизайнер. </p>
-                <p><strong>Хобби: </strong> Книги, природа, активный отдых, сайтостроение, дизайн, верстка </p>
+                <h2>Родзевич Татьяна Анатольевна</h2>
+                <p>Логопед-деффектолог высшеей квалификационной категории</p>
+                <p><strong>Стаж работы: </strong> 30 лет </p>
                 <p><strong>Знания: </strong>
                   <span class="tags">HTML5</span>
                   <span class="tags">CSS3</span>

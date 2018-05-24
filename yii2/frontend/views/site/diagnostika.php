@@ -10,7 +10,7 @@ use yii\widgets\Breadcrumbs;
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-left section-heading probootstrap-animate">
-          <?= Html::tag('h1', 'Диферинциальная диагностика') ?>
+          <?= Html::tag('h1', 'Дифферинциальная диагностика') ?>
           <?= Breadcrumbs::widget([
               'homeLink' => BreadcrumbsUtility::getHome('Главная', Yii::$app->getHomeUrl()),
               // получаем главную страницу с микроданными
@@ -87,7 +87,7 @@ use yii\widgets\Breadcrumbs;
       <div class="flex-container text-center">
         <div class="flex-element w8 ">
           <div class="my-content bg-info h2">
-            Диферинциальная диагностика
+            Дифферинциальная диагностика
           </div>
           <img src="/uploads/images/arrow.png" alt="">
         </div>

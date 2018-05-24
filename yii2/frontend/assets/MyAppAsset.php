@@ -30,6 +30,7 @@ class MyAppAsset extends AssetBundle{
         'js/vendor/jquery.stellar.min.js',
         'js/vendor/photoswipe.min.js',
         'js/vendor/photoswipe-ui-default.min.js',
+        'js/vendor/bootstrap.min.js',
         'js/magnific-popup.min.js',
         'js/main.js',
         'js/custom.js'
