@@ -57,4 +57,12 @@ echo Html::beginTag('section', ['class' => 'probootstrap-section']) ;
   echo Html::endTag('div') ;
 echo Html::endTag('section') ;
 
+echo Html::beginTag('div',['class' => 'container']);
+echo Html::beginTag('div',['class' => 'row']);
+echo Html::beginTag('div',['class' => 'text']);
+echo $program->text;
+echo Html::endTag('div');
+echo Html::endTag('div');
+echo Html::endTag('div');
+
 echo \frontend\widgets\Teachers::widget();

@@ -1,55 +1,73 @@
 <?php
 /* @var $this yii\web\View */
 
+/* @var $article common\models\ProgramsArticles */
+
 use frontend\components\BreadcrumbsUtility;
 use yii\widgets\Breadcrumbs;
 
-/* @var $article object */
+
 ?>
 
 <section class="probootstrap-section probootstrap-section-colored">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-left section-heading probootstrap-animate">
-                <?= \yii\helpers\Html::tag('h1',$article->name) ?>
-                <?= Breadcrumbs::widget([
-                    'homeLink' => BreadcrumbsUtility::getHome('Главная', Yii::$app->getHomeUrl()), // получаем главную страницу с микроданными
-                    'links' => isset($this->params['breadcrumbs']) ? BreadcrumbsUtility::UseMicroData($this->params['breadcrumbs']) : [], // получаем остальные хлебные крошки с микроданными
-                    'options' => [ // назначаем контейнеру разметку BreadcrumbList
-                        'class' => 'breadcrumb',
-                        'itemscope itemtype' => 'https://schema.org/BreadcrumbList'
-                    ],
-                ]) ?>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-left section-heading probootstrap-animate">
+          <?= \yii\helpers\Html::tag('h1', $article->name) ?>
+          <?= Breadcrumbs::widget([
+              'homeLink' => BreadcrumbsUtility::getHome('Главная', Yii::$app->getHomeUrl()),
+              // получаем главную страницу с микроданными
+              'links'    => isset($this->params['breadcrumbs']) ? BreadcrumbsUtility::UseMicroData($this->params['breadcrumbs']) : [],
+              // получаем остальные хлебные крошки с микроданными
+              'options'  => [ // назначаем контейнеру разметку BreadcrumbList
+                  'class'              => 'breadcrumb',
+                  'itemscope itemtype' => 'https://schema.org/BreadcrumbList',
+              ],
+          ]) ?>
+      </div>
     </div>
+  </div>
 </section>
 
 
 <section class="probootstrap-section probootstrap-section-sm">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row probootstrap-gutter0">
-                    <!--<div class="col-md-4" id="probootstrap-sidebar">
-                        <div class="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate">
-                            <h3>More Courses</h3>
-                            <ul class="probootstrap-side-menu">
-                                <li class="active"><a>Chemical Engineering</a></li>
-                                <li><a href="#">Application Design</a></li>
-                                <li><a href="#">Math Major</a></li>
-                                <li><a href="#">English Major</a></li>
-                            </ul>
-                        </div>
-                    </div>-->
-                    <div class="col-md-offset-2 col-md-8 probootstrap-animate" id="probootstrap-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime rerum possimus maiores, natus fugiat quibusdam dolorem. Dolore, odit ipsum, commodi distinctio repellendus vel tempore accusamus ea assumenda totam aut tempora. Illum sed harum, doloremque magnam nostrum. Fuga tempora corrupti unde ratione, placeat voluptates dicta asperiores est, ad voluptatem dolor, delectus sapiente voluptatum! Rerum magnam ducimus voluptas dolorum consectetur ex facilis quaerat sapiente eaque consequuntur perspiciatis nesciunt tenetur quibusdam corrupti voluptates consequatur repudiandae, quisquam aperiam veniam. Architecto voluptas blanditiis provident modi cumque a eius nam dignissimos numquam ducimus earum odit ipsam, reiciendis assumenda id quasi dolore, totam impedit molestias? Alias, ipsa!</p>
-                        <p>Velit natus alias eligendi architecto rem, itaque distinctio? Excepturi obcaecati fuga ratione. Dolore in ipsam rem ullam nemo error aperiam dolores eius, doloremque blanditiis placeat fugiat libero id atque, recusandae, voluptate laboriosam, distinctio omnis ab. Eius obcaecati, laudantium ex voluptatum voluptas, cum vitae molestiae quam est omnis nulla, quis velit? Esse natus tempore molestias deserunt, tempora illum labore, fuga animi totam dolore doloribus doloremque laudantium velit distinctio, non cumque dolorem delectus quia quibusdam? Amet, consectetur. Reprehenderit unde, eveniet temporibus, quae possimus magni. Dolore quo eveniet, distinctio dicta quisquam? Aliquid libero dolore provident, beatae odit facilis quasi dolorum sit ad minus!</p>
-                        <p>Tenetur, soluta natus porro, cumque vitae, iste accusamus beatae repudiandae quidem magnam sunt, nihil reprehenderit facere eveniet non sint aliquid. Ipsam totam nostrum, modi veritatis quidem maiores dolor minima incidunt non ratione qui quas, quasi aut sit obcaecati iure. Corporis, rem? Reprehenderit sequi, tenetur, libero nobis beatae ut doloremque obcaecati ipsa? Itaque numquam ratione et veniam porro magnam expedita ad laboriosam dolorum debitis omnis mollitia id eum minus necessitatibus ipsam consequuntur sed tempora assumenda, repudiandae culpa atque? Ad ut porro praesentium, earum voluptatum maxime, deserunt, omnis dolorem veniam cumque et officia veritatis, nam perferendis ex facilis sit sapiente at accusamus?</p>
-                        <p><a href="#" class="btn btn-primary">Enroll with this course now</a></p>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row probootstrap-gutter0">
+          <div class="col-md-offset-2 col-md-8 probootstrap-animate"
+               id="probootstrap-content">
+            <dl class="dl-horizontal">
+              <dt>Диагноз</dt>
+              <dd><strong>Общее недоразвитие речи (ОНР)</strong> - системное нарушение, характеризующееся несформированностью
+                всех сторон речи (звуковой, фонематической,
+                лексико-грамматической, семантической) у детей с нормальным
+                слухом и первично сохранным интеллектом. Проявления ОНР зависят
+                от уровня недоразвития компонентов речевой системы и могут
+                выражаться как полным отсутствием общеупотребительной речи, так
+                и наличием связной речи с элементами фонетико-фонематического и
+                лексико-грамматического недоразвития
+              </dd>
+              <dt>Коррекция ОНР </dt>
+              <dd>
+                <ul class="list-unstyled">
+                  <li><strong>ОНР 1 уровня</strong> является развитие понимания обращенной речи, активизация самостоятельной речевой активности детей и неречевых процессов (внимания, памяти, мышления). При обучении детей с ОНР 1 уровня не ставится задача правильного фонетического оформления высказывания, но обращается внимание на грамматическую сторону речи.</li>
+                  <li><strong>ОНР 2 уровня</strong> ведется работа над развитием речевой активности и понимания речи, лексико-грамматических средств языка, фразовой речи и уточнением звукопроизношения и вызыванием отсутствующих звуков.</li>
+                  <li><strong>ОНР 3 уровня</strong> проводится развитие связной речи, совершенствование лексико-грамматической стороны речи, закрепление правильного звукопроизношения и фонематического восприятия. На этом этапе уделяется внимание подготовке детей к усвоению грамоты.</li>
+                  <li><strong>ОНР 4 уровня</strong> служит достижение детьми возрастной нормы устной речи, необходимой для успешного школьного обучения. Для этого необходимо совершенствовать и закреплять произносительные умения, фонематические процессы, лексико-грамматическую сторону речи, развернутую фразовую речь; развивать графо-моторные навыки и первичные навыки чтения и письма.</li>
+                </ul>
+              </dd>
+              <dt>Стоимость</dt>
+              <dd>
+                <ul class="list-unstyled">
+                  <li>1,2 уровень - 1500 руб.</li>
+                  <li>3,4 уровень - 1400 руб.</li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>

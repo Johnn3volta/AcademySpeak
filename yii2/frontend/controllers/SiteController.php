@@ -128,6 +128,12 @@ class SiteController extends MetaController{
         return $this->render('price-list');
     }
 
+    public function actionDiagnostika(){
+        $this->view->params['breadcrumbs'][] = ['label' => 'Диферинциальная диагностика', 'url' => Url::current()];
+        $this->setMeta('Диферинциальная диагностика для детей и взрослых','Диферинциальная диагностика для детей и взрослых','','article');
+        return $this->render('diagnostika');
+    }
+
     public function actionCallBack(){
         $callback = new CallBackForm();
         if(Yii::$app->request->isAjax){
