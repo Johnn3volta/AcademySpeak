@@ -13,13 +13,7 @@ use yii\helpers\Url;
  */
 class SiteController extends MetaController{
 
-    public $description = '';
 
-    public $keywords = '';
-
-    public $title = '';
-
-    public $website = 'website';
 
     /**
      * {@inheritdoc}
@@ -73,10 +67,7 @@ class SiteController extends MetaController{
      * @return mixed
      */
     public function actionIndex(){
-        $this->description = 'hello friend my friend';
-        $this->title = 'Главная страница';
-        $this->keywords = '';
-        $this->setMeta($this->title, $this->description);
+        $this->setMeta('Логопедические услуги в МОскве и московской области', 'Студия речи ! Логопедические услуги в Москве и московской области по доступным ценам');
 
         return $this->render('index');
     }
@@ -87,9 +78,8 @@ class SiteController extends MetaController{
      * @return mixed
      */
     public function actionContact(){
-        $this->description = 'Контактная информация и форма обратной связи';
-        $this->title = 'Обратная связь | ' . Yii::$app->name;
-        $this->setMeta($this->title, $this->description);
+
+        $this->setMeta('Форма обратной связи | ' . Yii::$app->name, 'Контактная информация, форма обратной связи');
         $this->view->params['breadcrumbs'][] = [
             'label' => 'Обратная связь',
             'url'   => Url::current(),
