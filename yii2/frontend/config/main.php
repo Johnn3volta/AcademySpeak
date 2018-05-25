@@ -5,7 +5,7 @@ return [
     'id'                  => 'app-frontend',
     'basePath'            => dirname(__DIR__),
     'layout'              => 'myLayout',
-    'name'                => 'Speak Studio',
+    'name'                => 'Студия Речи',
     'bootstrap'           => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components'          => [

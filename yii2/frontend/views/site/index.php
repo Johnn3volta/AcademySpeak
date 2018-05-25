@@ -99,7 +99,7 @@ use frontend\widgets\WhyWe;
           </div>
           <div class="probootstrap-text">
                   <span class="probootstrap-counter">
-                    <span class="js-counter" data-from="0" data-to="37" data-speed="5000" data-refresh-interval="50">1</span>
+                    <span class="js-counter" data-from="0" data-to="25" data-speed="5000" data-refresh-interval="50">1</span>+
                   </span>
             <span class="probootstrap-counter-label">Направлений деятельности</span>
           </div>

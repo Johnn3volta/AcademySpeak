@@ -25,62 +25,6 @@ use yii\widgets\Breadcrumbs;
     </div>
   </div>
 </section>
-<style>
-  .flex-container {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-  }
-
-  .flex-container .h2 {
-    font-size: 20px;
-    color: black;
-  }
-
-  .flex-element {
-
-  }
-
-  .my-content {
-    padding: 20px;
-    border: 1px dotted black;
-    margin: 0 1%;
-    border-radius: 5px;
-    font-size: 18px;
-    align-items: stretch;
-    flex: content;
-  }
-
-  .flex-element img {
-    padding: 20px 0;
-  }
-
-  .w5 {
-    width: 45%;
-  }
-
-  .w8 {
-    width: 80%;
-  }
-
-  @media screen and (max-width: 425px){
-    .w5 {
-      width: 98%
-    }
-    .order {
-      -webkit-order: 1;
-      order: 1;
-    }
-    .order-first {
-      margin-top: 20px;
-    }
-  }
-
-</style>
-
 <section class="probootstrap-section">
   <div class="container">
     <div class="col-sm-offset-1 col-sm-10">

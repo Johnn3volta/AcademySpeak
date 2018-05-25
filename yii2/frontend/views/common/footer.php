@@ -28,7 +28,7 @@
                           ['label' => 'Главная', 'url' => \yii\helpers\Url::home()],
                           ['label' => 'Деятельность', 'url' => ['/programs-cats/index']],
                           ['label' => 'Прайс-лист', 'url' => ['/price-list']],
-                          ['label' => 'Новости', 'url' => '#'],
+                          ['label' => 'О нас', 'url' => ['/about']],
                           ['label' => 'Контакты', 'url' => ['/contact']],
                       ]
                   ]) ?>

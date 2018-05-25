@@ -11,15 +11,18 @@
         <div class="col-md-12">
           <div class="profile probootstrap-teacher probootstrap-animate fadeInUp probootstrap-animated">
             <div class="col-sm-12">
-              <div class="col-xs-12 col-sm-8">
-                <h2>Родзевич Татьяна Анатольевна</h2>
-                <p>Логопед-деффектолог высшеей квалификационной категории</p>
-                <p><strong>Стаж работы: </strong> 30 лет </p>
-                <p><strong>Знания: </strong>
-                  <span class="tags">HTML5</span>
-                  <span class="tags">CSS3</span>
-                  <span class="tags">jQuery</span>
-                  <span class="tags">Bootstrap</span>
+              <div class="col-xs-12 col-sm-8 teacher">
+                <h2>Татьяна Анатольевна</h2>
+                <b>Логопед-деффектолог высшей квалификационной категории</b>
+                <p><strong>Образование: </strong> <br> Минский государственный педагогический университет
+                   <span class="text-muted">(Высшее)</span> </p>
+                <p><strong>Стаж работы: </strong> <br> 30 лет </p>
+                <p><strong><i class="icon-bookmarks2"></i>: </strong>
+                  <span class="tags">Алалия</span>
+                  <span class="tags">ОНР</span>
+                  <span class="tags">Дизартрия</span>
+                  <span class="tags">Диспалия</span>
+                  <span class="tags">25 +</span>
                 </p>
               </div>
               <div class="col-xs-12 col-sm-4 text-center">

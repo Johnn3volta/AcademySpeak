@@ -22,8 +22,8 @@ echo Html::beginTag('html',['lang' =>Yii::$app->language,'prefix' => 'og: http:/
 //      echo $this->registerLinkTag(['href' => 'https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans','rel' => 'stylesheet']) ;
       $this->head() ;
       echo "\n<!--[if lte IE9]>\n";
-      echo Html::JsFile('/js/vendor/html5shiv.min.js')."\n";
-      echo Html::JsFile('/js/vendor/respond.min.js')."\n";
+      echo Html::JsFile('/js/ie9/html5shiv.min.js')."\n";
+      echo Html::JsFile('/js/ie9/respond.min.js')."\n";
       echo "<![endif]-->\n";
   echo Html::endTag('head');
   echo Html::beginTag('body',['class' => Yii::$app->controller->id.'-'.Yii::$app->controller->action->id]);
