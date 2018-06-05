@@ -5,10 +5,9 @@
  */
 
 
-use frontend\components\BreadcrumbsUtility;
+use frontend\widgets\BreadCrumbsMicrodata;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\widgets\Breadcrumbs;
 
 
 echo Html::beginTag('section',['class' => 'probootstrap-section probootstrap-section-colored']);
@@ -17,14 +16,22 @@ echo Html::beginTag('section',['class' => 'probootstrap-section probootstrap-sec
     echo Html::beginTag('div',['class' => 'col-md-12 text-left section-heading probootstrap-animate']) ;
 
         echo Html::tag('h1',$program->name) ;
-echo Breadcrumbs::widget([
-    'homeLink' => BreadcrumbsUtility::getHome('Главная', Yii::$app->getHomeUrl()), // получаем главную страницу с микроданными
-    'links' => isset($this->params['breadcrumbs']) ? BreadcrumbsUtility::UseMicroData($this->params['breadcrumbs']) : [], // получаем остальные хлебные крошки с микроданными
-    'options' => [ // назначаем контейнеру разметку BreadcrumbList
-        'class' => 'breadcrumb',
-        'itemscope itemtype' => 'https://schema.org/BreadcrumbList'
-    ],
-]) ;
+            echo BreadCrumbsMicrodata::widget([
+                'options'            => [
+                    'class' => 'breadcrumb',
+                ],
+                'homeLink'           => [
+                    'label'    => Yii::t('yii', 'Home'),
+                    'url'      => ['/site/index'],
+                    'class'    => 'home',
+                    'template' => '<li>{link}</li>',
+                ],
+                'links'              => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                'itemTemplate'       => '<li>{link}</li>',
+                'activeItemTemplate' => '<li class="active">{link}</li>',
+                'tag'                => 'ul',
+                'encodeLabels'       => false,
+            ]);
     echo Html::endTag('div') ;
    echo Html::endTag('div') ;
   echo Html::endTag('div') ;

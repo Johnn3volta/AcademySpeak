@@ -82,7 +82,6 @@ class SiteController extends MetaController{
         $this->setMeta('Форма обратной связи | ' . Yii::$app->name, 'Контактная информация, форма обратной связи');
         $this->view->params['breadcrumbs'][] = [
             'label' => 'Обратная связь',
-            'url'   => Url::current(),
         ];
 
         $model = new ContactForm();
@@ -107,19 +106,19 @@ class SiteController extends MetaController{
      * @return mixed
      */
     public function actionAbout(){
-        $this->view->params['breadcrumbs'][] = ['label' => 'О нас','url' => Url::current()];
+        $this->view->params['breadcrumbs'][] = ['label' => 'О нас'];
         $this->setMeta('О нас','О нас');
         return $this->render('about');
     }
 
     public function actionPriceList(){
-        $this->view->params['breadcrumbs'][] = ['label' => 'Прайс-лист','url' => Url::current()];
+        $this->view->params['breadcrumbs'][] = ['label' => 'Прайс-лист'];
         $this->setMeta('Прайс-лист по окозанию логопедических услуг','Прайс-лист по окозанию логопедических услуг для детей и взрослых');
         return $this->render('price-list');
     }
 
     public function actionDiagnostika(){
-        $this->view->params['breadcrumbs'][] = ['label' => 'Диферинциальная диагностика', 'url' => Url::current()];
+        $this->view->params['breadcrumbs'][] = ['label' => 'Диферинциальная диагностика'];
         $this->setMeta('Диферинциальная диагностика для детей и взрослых','Диферинциальная диагностика для детей и взрослых','','article');
         return $this->render('diagnostika');
     }

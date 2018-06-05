@@ -2,10 +2,9 @@
 
 /* @var $this yii\web\View */
 
-use frontend\components\BreadcrumbsUtility;
 use frontend\widgets\WhyWe;
+use frontend\widgets\BreadCrumbsMicrodata;
 use yii\helpers\Html;
-use yii\widgets\Breadcrumbs;
 
 ?>
 <section class="probootstrap-section probootstrap-section-colored">
@@ -13,40 +12,28 @@ use yii\widgets\Breadcrumbs;
     <div class="row">
       <div class="col-md-12 text-left section-heading probootstrap-animate">
           <?= Html::tag('h1', 'О нас') ?>
-          <?= Breadcrumbs::widget([
-              'homeLink' => BreadcrumbsUtility::getHome('Главная', Yii::$app->getHomeUrl()),
-              // получаем главную страницу с микроданными
-              'links'    => isset($this->params['breadcrumbs']) ? BreadcrumbsUtility::UseMicroData($this->params['breadcrumbs']) : [],
-              // получаем остальные хлебные крошки с микроданными
-              'options'  => [ // назначаем контейнеру разметку BreadcrumbList
-                  'class'              => 'breadcrumb',
-                  'itemscope itemtype' => 'https://schema.org/BreadcrumbList',
+          <?= BreadCrumbsMicrodata::widget([
+              'options'            => [
+                  'class' => 'breadcrumb',
               ],
-          ]) ?>
+              'homeLink'           => [
+                  'label'    => Yii::t('yii', 'Home'),
+                  'url'      => ['/site/index'],
+                  'class'    => 'home',
+                  'template' => '<li>{link}</li>',
+              ],
+              'links'              => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+              'itemTemplate'       => '<li>{link}</li>',
+              'activeItemTemplate' => '<li class="active">{link}</li>',
+              'tag'                => 'ul',
+              'encodeLabels'       => false,
+          ]); ?>
       </div>
     </div>
   </div>
 </section>
 <style>
-  .site-about h3 small {
-    display: block;
-    font-size: 16px;
-  }
 
-  .main-spec p {
-    line-height: 20px;
-    font-size: 16px;
-  }
-
-  .main-spec p img {
-    margin: 0 auto;
-  }
-
-  .main-spec strong, .main-spec span {
-    display: block;
-    padding-bottom: 10px;
-    padding-top: 2px;
-  }
 </style>
 <section class="probootstrap-section main-spec">
   <div class="container">
@@ -58,7 +45,6 @@ use yii\widgets\Breadcrumbs;
               'class' => 'img-responsive img-circle',
               'alt'   => 'Главный специалист',
           ]) ?>
-
       </p>
     </div>
     <div class="col-md-7 ">
@@ -87,7 +73,8 @@ use yii\widgets\Breadcrumbs;
         Особенности организации и методики коррекционно-развивающей работы при
         детском аутизме
         <span class="text-muted">2007 — 2007 гг. <br>Гомельский областной институт повышения квалификации (Свидетельство № 0491506 Квалификация: учитель-дефектолог)</span>
-        Поддерживающая и альтернативная коммуникация для детей с тяжелыми и (или) множественными нарушениями развития
+        Поддерживающая и альтернативная коммуникация для детей с тяжелыми и
+        (или) множественными нарушениями развития
         <span class="text-muted">2007 — 2007 гг. <br>Институт повышения квалификации и переподготовки кадров Белорусского государственного педагогического университета г. Минск (Свидетельство № 0538501. Квалификация: учитель-дефектолог)</span>
       </p>
     </div>

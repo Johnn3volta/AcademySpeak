@@ -23,7 +23,7 @@ class ProgramArticleController extends MetaController{
             $parents = ProgramsCats::find()->select(['name','url'])->where(['id' => $article->parent_id])->asArray()->all();
             $this->view->params['breadcrumbs'][] = ['label' => 'Направления деятельности','url' => Url::toRoute(['/programs-cats/index'])];
             $this->view->params['breadcrumbs'][] = ['label' => $parents[0]['name'],'url' => Url::toRoute(['programs-cats/program','url' => $parents[0]['url']]) ];
-            $this->view->params['breadcrumbs'][] = ['label' => $article->name,'url' => Url::current()];
+            $this->view->params['breadcrumbs'][] = ['label' => $article->name];
             $this->setMeta($article->title,$article->description,$article->keywords);
             return $this->render('article',['article' => $article,'parents' =>$parents]);
         }else{

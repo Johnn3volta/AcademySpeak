@@ -9,9 +9,8 @@ use yii\helpers\Html;
 
 $this->registerMetaTag(['name' => 'description','content' => 'Страница ошибки '],'description');
 $this->registerMetaTag(['name' => 'keywords','content' => '' ],'keywords');
-$this->registerMetaTag(['property' => 'og:url','content' => 'http://'.Yii::$app->request->serverName.Yii::$app->request->url]);
+$this->registerMetaTag(['property' => 'og:url','content' => Yii::$app->request->referrer]);
 $this->registerMetaTag(['property' => 'og:title','content' => $this->title]);
-$this->registerMetaTag(['property' => 'og:type','content' => 'website']);
 
 $this->registerCssFile('/css/error.css');
 

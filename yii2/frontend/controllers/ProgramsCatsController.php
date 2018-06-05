@@ -22,6 +22,7 @@ class ProgramsCatsController extends MetaController{
 
         if($model){
             $this->setMeta('Направления деятельности', $description);
+            $this->view->params['breadcrumbs'][] = ['label' => 'Направления деятельности'];
             $count = ProgramsCatsQuery::Counts($model);
 
             return $this->render('programms', ['model' => $model,'count' => $count]);
@@ -40,7 +41,7 @@ class ProgramsCatsController extends MetaController{
 
         if($program){
             $this->view->params['breadcrumbs'][] = ['label' => 'Направления деятельности','url' => Url::toRoute(['programs-cats/index']) ];
-            $this->view->params['breadcrumbs'][] = ['label' => $program->name,'url' => Url::current()];
+            $this->view->params['breadcrumbs'][] = ['label' => $program->name];
             $articles = ProgramsArticles::find()
                                         ->where(['parent_id' => $program->id])
                                         ->select(['name', 'url'])
