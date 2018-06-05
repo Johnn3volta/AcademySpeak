@@ -174,6 +174,29 @@ span.tags {
 }
 /*Диангостика end */
 
+/*about*/
+
+.site-about h3 small {
+    display: block;
+    font-size: 16px;
+}
+
+.main-spec p {
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.main-spec p img {
+    margin: 0 auto;
+}
+
+.main-spec strong, .main-spec span {
+    display: block;
+    padding-bottom: 10px;
+    padding-top: 2px;
+}
+
+/*about end*/
 /*Стили кнопки обратного звонка */
 
 #popup__toggle {
