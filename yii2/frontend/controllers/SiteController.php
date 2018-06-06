@@ -67,7 +67,7 @@ class SiteController extends MetaController{
      * @return mixed
      */
     public function actionIndex(){
-        $this->setMeta('Логопедические услуги в МОскве и московской области', 'Студия речи ! Логопедические услуги в Москве и московской области по доступным ценам');
+        $this->setMeta('Логопедические услуги в Москве и московской области, дешево !', 'Студия речи ! Логопедические услуги для детей и взрослых в Москве и московской области по приемлимым ценам');
 
         return $this->render('index');
     }
@@ -107,13 +107,13 @@ class SiteController extends MetaController{
      */
     public function actionAbout(){
         $this->view->params['breadcrumbs'][] = ['label' => 'О нас'];
-        $this->setMeta('О нас','О нас');
+        $this->setMeta('Информация о сайте','Информация о нашей деятельности сайта, наши специалисты');
         return $this->render('about');
     }
 
     public function actionPriceList(){
         $this->view->params['breadcrumbs'][] = ['label' => 'Прайс-лист'];
-        $this->setMeta('Прайс-лист по окозанию логопедических услуг','Прайс-лист по окозанию логопедических услуг для детей и взрослых');
+        $this->setMeta('Прайс-лист по окозанию логопедических услуг','Прайс-лист по окозанию логопедических услуг для детей и взрослых, цены');
         return $this->render('price-list');
     }
 

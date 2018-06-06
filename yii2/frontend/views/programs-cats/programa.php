@@ -15,7 +15,7 @@ echo Html::beginTag('section',['class' => 'probootstrap-section probootstrap-sec
    echo Html::beginTag('div',['class' => 'row']) ;
     echo Html::beginTag('div',['class' => 'col-md-12 text-left section-heading probootstrap-animate']) ;
 
-        echo Html::tag('h1',$program->name) ;
+        echo Html::tag('h1',$program->seo_h1) ;
             echo BreadCrumbsMicrodata::widget([
                 'options'            => [
                     'class' => 'breadcrumb',
@@ -63,13 +63,19 @@ echo Html::beginTag('section', ['class' => 'probootstrap-section']) ;
     echo Html::endTag('div') ;
   echo Html::endTag('div') ;
 echo Html::endTag('section') ;
-
-echo Html::beginTag('div',['class' => 'container']);
+echo Html::tag('hr','',['class' => 'in-style']);
+echo Html::beginTag('div',['class' => 'container text-container']);
 echo Html::beginTag('div',['class' => 'row']);
-echo Html::beginTag('div',['class' => 'text']);
+echo Html::beginTag('div',['class' => 'col-md-5']);
+echo Html::beginTag('div',['class' => 'img-wrapper hidden-xs']);
+echo Html::img($program->getImage()->getPath('400x400'),['alt' => $program->name,'class' => 'img-responsive text-center']);
+echo Html::endTag('div');
+echo Html::endTag('div');
+echo Html::beginTag('div',['class' => 'col-md-7']);
 echo $program->text;
 echo Html::endTag('div');
 echo Html::endTag('div');
 echo Html::endTag('div');
+echo Html::tag('hr','',['class' => 'in-style']);
 
 echo \frontend\widgets\Teachers::widget();

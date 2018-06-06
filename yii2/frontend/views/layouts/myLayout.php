@@ -16,6 +16,7 @@ echo Html::beginTag('html',['lang' =>Yii::$app->language,'prefix' => 'og: http:/
       echo Html::tag('meta','',['charset' => Yii::$app->charset])."\n";
       echo Html::tag('meta','',['http-equiv' => 'X-UA-Compatible','content' => 'IE=edge'])."\n" ;
       echo Html::tag('meta','',['name' => 'viewport','content' => 'width=device-width, initial-scale=1'])."\n" ;
+      echo Html::tag('base','',['href' => '/'])."\n";
       echo Html::csrfMetaTags() ;
       echo Html::tag('title', Html::encode($this->title))."\n" ;
       $this->registerLinkTag(['rel' => 'shortcut icon', 'type' => 'image/x-icon', 'href' => Url::to(['/favicon.png'])]);

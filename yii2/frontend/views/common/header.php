@@ -66,7 +66,7 @@ use yii\widgets\Menu;
                   ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
                   ['label' => 'Диагностика', 'url' => ['/diagnostika']],
                   [
-                      'label'    => 'Направления деятельности',
+                      'label'    => 'Услуги',
                       'url'      => ['/programs-cats/index'],
                       'options'  => ['class' => 'dropdown'],
                       'template' => '<a href="{url}" data-toggle="dropdown" class="dropdown-toggle">{label}</a>',

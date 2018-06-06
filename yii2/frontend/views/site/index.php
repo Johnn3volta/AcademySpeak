@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-use frontend\widgets\NapravleniyaDeyatelnosti;
+use frontend\widgets\Uslugi;
 use frontend\widgets\Teachers;
 use frontend\widgets\Testimonials;
 use frontend\widgets\WhyWe;
@@ -101,7 +101,7 @@ use frontend\widgets\WhyWe;
                   <span class="probootstrap-counter">
                     <span class="js-counter" data-from="0" data-to="25" data-speed="5000" data-refresh-interval="50">1</span>+
                   </span>
-            <span class="probootstrap-counter-label">Направлений деятельности</span>
+            <span class="probootstrap-counter-label">Услуг</span>
           </div>
         </div>
       </div>
@@ -125,7 +125,7 @@ use frontend\widgets\WhyWe;
 
 <?//= \frontend\widgets\NewsBlock::widget(); ?>
 
-<?= NapravleniyaDeyatelnosti::widget();?>
+<?= Uslugi::widget();?>
 
 <?= Teachers::widget();?>
 

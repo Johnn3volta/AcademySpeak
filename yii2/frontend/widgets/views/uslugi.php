@@ -13,7 +13,7 @@ use yii\helpers\StringHelper;
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center section-heading probootstrap-animate">
-          <?= Html::tag('h2', 'Направления деятельности') ?>
+          <?= Html::tag('h2', 'Услуги') ?>
       </div>
     </div>
     <div class="row">

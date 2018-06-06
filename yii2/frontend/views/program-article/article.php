@@ -4,7 +4,6 @@
 /* @var $article common\models\ProgramsArticles */
 
 use frontend\widgets\BreadCrumbsMicrodata;
-use yii\widgets\Breadcrumbs;
 
 
 ?>

@@ -10,22 +10,23 @@
                 <div class="service left-icon probootstrap-animate">
                     <div class="icon"><i class="icon-checkmark"></i></div>
                     <div class="text">
-                        <h3>Consectetur Adipisicing</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
+                        <h3>Профессионализм</h3>
+                        <p>Наши преподаватели имеют высшее образование, посещают дополнительные курсы и тренинги по специальности и следят за появлением новых трендов в педагогике.</p>
                     </div>
                 </div>
                 <div class="service left-icon probootstrap-animate">
                     <div class="icon"><i class="icon-checkmark"></i></div>
                     <div class="text">
-                        <h3>Aliquid Dolorum Saepe</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
+                        <h3>Большой опыт</h3>
+                        <p>Десятки лет стажа, сотни довольных учеников.</p>
                     </div>
                 </div>
                 <div class="service left-icon probootstrap-animate">
                     <div class="icon"><i class="icon-checkmark"></i></div>
                     <div class="text">
-                        <h3>Eveniet Tempora Anisi</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
+                        <h3>Доверие родителей</h3>
+                        <p>Родители рассказывают друг другу об успешном опыте прохождения курсов в
+                          <strong>Студии Речи</strong>.</p>
                     </div>
                 </div>
             </div>
@@ -33,24 +34,24 @@
                 <div class="service left-icon probootstrap-animate">
                     <div class="icon"><i class="icon-checkmark"></i></div>
                     <div class="text">
-                        <h3>Laboriosam Quod Dignissimos</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
+                        <h3>Работа на результат</h3>
+                        <p>Наши специалисты-логопеды стремятся достичь результата в максимально краткие сроки. Преподаватели используют самые эффективные методики для решения любых проблем.</p>
                     </div>
                 </div>
 
                 <div class="service left-icon probootstrap-animate">
                     <div class="icon"><i class="icon-checkmark"></i></div>
                     <div class="text">
-                        <h3>Asperiores Maxime Modi</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
+                        <h3>Широкий спектр услуг</h3>
+                        <p>У нас вы найдете курс, подходящий именно вам.</p>
                     </div>
                 </div>
 
                 <div class="service left-icon probootstrap-animate">
                     <div class="icon"><i class="icon-checkmark"></i></div>
                     <div class="text">
-                        <h3>Libero Maxime Molestiae</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
+                        <h3>Индивидуальный подход</h3>
+                        <p>Преподаватели находят особый подход к каждому ученику.</p>
                     </div>
                 </div>
 
