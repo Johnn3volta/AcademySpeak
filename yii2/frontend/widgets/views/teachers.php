@@ -22,7 +22,6 @@
                   <span class="tags">ОНР</span>
                   <span class="tags">Дизартрия</span>
                   <span class="tags">Диспалия</span>
-                  <span class="tags">25 +</span>
                 </p>
               </div>
               <div class="col-xs-12 col-sm-4 text-center">

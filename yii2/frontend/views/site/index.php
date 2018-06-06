@@ -91,7 +91,7 @@ use frontend\widgets\WhyWe;
 <!--          </div>-->
 <!--        </div>-->
 <!--      </div>-->
-      <div class="clearfix visible-sm-block visible-xs-block"></div>
+<!--      <div class="clearfix visible-sm-block visible-xs-block"></div>-->
       <div class="col-sm-4 col-xs-12 col-xxs-12 probootstrap-animate">
         <div class="probootstrap-counter-wrap">
           <div class="probootstrap-icon">

@@ -56,7 +56,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 text-left">
-                  <p><?= \yii\helpers\Html::a(Yii::$app->name,Yii::$app->homeUrl) ?> Логопедические услуги <?= (date('Y') == 2018) ? 'Copyright  &copy; ' .date('Y') : 'Copyright  &copy; 2018 - ' . date('Y') ?></p>
+                  <p> Логопедические услуги <?= \yii\helpers\Html::tag('span',Yii::$app->request->hostName,['class'=>'hostname']) ?> <?= (date('Y') == 2018) ? 'Copyright  &copy; ' .date('Y') : 'Copyright  &copy; 2018 - ' . date('Y') ?></p>
                 </div>
                 <div class="col-md-4 probootstrap-back-to-top">
                     <p><a href="#" class="js-backtotop">Вверх <i class="icon-arrow-long-up"></i></a></p>

@@ -22,7 +22,7 @@ echo Html::beginTag('section',['class' => 'probootstrap-section probootstrap-sec
                 ],
                 'homeLink'           => [
                     'label'    => Yii::t('yii', 'Home'),
-                    'url'      => ['/site/index'],
+                    'url'      => Yii::$app->homeUrl,
                     'class'    => 'home',
                     'template' => '<li>{link}</li>',
                 ],

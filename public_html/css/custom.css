@@ -40,6 +40,13 @@ footer.probootstrap-footer .probootstrap-contact-info li a i.icon-phone2 {
     color: #49D292;
 }
 
+footer p span.hostname {
+    text-transform: uppercase;
+    padding: 0 10px;
+    font-weight: 700;
+    color: #888;
+}
+
 .probootstrap-section {
     padding: 2em 0;
 }
@@ -197,6 +204,7 @@ span.tags {
 }
 
 /*about end*/
+
 /*Стили кнопки обратного звонка */
 
 #popup__toggle {

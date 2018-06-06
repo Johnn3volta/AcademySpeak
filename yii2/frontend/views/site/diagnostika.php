@@ -16,7 +16,7 @@ use frontend\widgets\BreadCrumbsMicrodata;
               ],
               'homeLink' => [
                   'label' => Yii::t('yii', 'Home'),
-                  'url' => ['/site/index'],
+                  'url' => Yii::$app->homeUrl,
                   'class' => 'home',
                   'template' => '<li>{link}</li>',
               ],
